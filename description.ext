@@ -1,0 +1,14 @@
+#include "zade_spectator\include\description.hpp"
+
+class CfgRespawnTemplates
+{
+  #include "zade_spectator\include\CfgRespawnTemplates.hpp"
+};
+class CfgFunctions {
+  #include "zade_spectator\include\CfgFunctions.hpp"
+};
+class RscTitles {
+  #include "zade_spectator\include\RscTitles.hpp"
+};
+
+enableDebugConsole = 1;
