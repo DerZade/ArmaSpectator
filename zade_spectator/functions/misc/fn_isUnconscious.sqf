@@ -16,4 +16,4 @@
 
 params ["_unit"];
 
-((unitPos _unit) isEqualTo "Down")
+(_unit getVariable ["ACE_isUnconscious", false] || lifeState _unit == "INCAPACITATED"])
