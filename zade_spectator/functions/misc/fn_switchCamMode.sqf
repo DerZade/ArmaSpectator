@@ -66,11 +66,7 @@ switch (_camMode) do {
                _camera camSetTarget (vehicle zade_spectator_target);
           };
           zade_spectator_camera = _camera;
-
-          private _pos = [zade_spectator_target, 7,(direction zade_spectator_target -180)] call BIS_fnc_relPos;
-          _pos set [2,3];
-          private _vec = _pos vectorDiff (getPos zade_spectator_target);
-          zade_spectator_vector = [_vec,direction zade_spectator_target] call BIS_fnc_rotateVector2D;
+          zade_spectator_vector = [0,-7,3];
 
           ["zade_spectator_updateExternalCam","onEachFrame","_vec = if (vehicle zade_spectator_target isEqualTo zade_spectator_target) then {zade_spectator_vector vectorAdd (zade_spectator_target selectionPosition 'head')} else {zade_spectator_vector}; zade_spectator_camera camSetRelPos _vec; zade_spectator_camera camCommit 0;"] call BIS_fnc_addStackedEventHandler;
           player attachTo [zade_spectator_camera,[0,0,0]];
