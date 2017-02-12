@@ -25,57 +25,22 @@ if (missionNamespace getVariable ["zade_spectator_editFocused",false] and _key i
 if (missionNamespace getVariable ["zade_spectator_editFocused",false]) exitWith {};
 
 switch (true) do {
-     case (_key in [1]): { //ESC
-          if (ctrlShown (_dialog displayCtrl 2)) exitWith {
-               (_dialog displayCtrl 2) ctrlShow false; true;
-          };
-          if (ctrlShown (_dialog displayCtrl 3)) exitWith {
-               (_dialog displayCtrl 3) ctrlShow false; true;
-          };
+     case (_key in (actionKeys "CameraTarget")): {  //F - Move to target
+          hint "yolo1";
 
-          private _displayType = if (isMultiplayer) then { "RscDisplayMPInterrupt" } else { "RscDisplayInterrupt" };
-          _dialog createDisplay _displayType;
-
-          ((findDisplay 49) displayCtrl 103) ctrlEnable false;
-          ((findDisplay 49) displayCtrl 119) ctrlEnable false;
-          ((findDisplay 49) displayCtrl 104) ctrlSetEventHandler ["buttonClick", "['end1',false,0] call BIS_fnc_endMission;"];
-          true;
-     };
-     case (_key in [59]): { //F1 - Toogle Controls
-
-          if (ctrlShown (_dialog displayCtrl 3)) then {
-               //hide controls
-               (_dialog displayCtrl 3) ctrlShow false;
-          } else {
-               //show map
-               (_dialog displayCtrl 3) ctrlShow true;
-          };
-          true;
-     };
-     case (_key in [61]): { //F3 - Search
-
-          //focus search edit
-          ctrlSetFocus (_dialog displayCtrl 12);
-
-          //show panel
-          if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
-               (_dialog displayCtrl 1) ctrlSetFade 0;
-               (_dialog displayCtrl 1) ctrlCommit 0;
-          };
-          true;
-     };
-     case (_key in [33]): { //F - (+ CTRL) Search
-
-          if (_ctrl and !_shift and !_alt) then {
-               //focus search edit
-               ctrlSetFocus (_dialog displayCtrl 12);
-
-               //show panel
-               if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
-                    (_dialog displayCtrl 1) ctrlSetFade 0;
-                    (_dialog displayCtrl 1) ctrlCommit 0;
+          switch (zade_spectator_camMode) do {
+               case "EXTERNAL": {
+                    zade_spectator_vector = [0,-7,3];
+               };
+               case "FREECAM": {
+                    hint "yolo2";
+                    private _pos = [zade_spectator_target, 7,(direction zade_spectator_target -180)] call BIS_fnc_relPos;
+                    _pos set [2,3];
+                    zade_spectator_camera setPos _pos;
+                    zade_spectator_camera setDir (direction zade_spectator_target);
                };
           };
+
           true;
      };
      case (_key in actionKeys "CameraInterface"): { //BACKSPACE - Toggle Interface
@@ -116,34 +81,6 @@ switch (true) do {
           };
           true;
      };
-     case (_key in [50]): { //M - Toggle map
-          if (ctrlShown (_dialog displayCtrl 2)) then {
-               //hide map
-               (_dialog displayCtrl 2) ctrlShow false;
-          } else {
-               //center map on camera
-               (_dialog displayCtrl 23) ctrlMapAnimAdd [0, 0.05, (call zade_spectator_fnc_camera)];
-               ctrlMapAnimCommit (_dialog displayCtrl 23);
-
-               //show map
-               (_dialog displayCtrl 2) ctrlShow true;
-          };
-          true;
-     };
-     case (_key in [20]): { //T - Toggle TFAR
-
-          [] call zade_spectator_fnc_toggleTFAR;
-          true;
-     };
-     case (46): { //C - Cycle cammode
-          private _camMode = (["EXTERNAL","FREECAM","INTERNAL"] find zade_spectator_camMode);
-          if (_ctrl) then {
-               _camMode = (["INTERNAL","EXTERNAL","FREECAM"] find zade_spectator_camMode);
-          };
-          (_dialog displayCtrl 17) lbSetCurSel _camMode;
-          [(["FREECAM","INTERNAL","EXTERNAL"] select _camMode)] call zade_spectator_fnc_switchCamMode;
-          true;
-     };
      case (_key in actionKeys "CameraMoveTurbo2"): { //LALT - Speed
          if (zade_spectator_cammode isEqualTo "FREECAM") then {
                zade_spectator_camera camCommand "speedDefault 2.0";
@@ -172,6 +109,89 @@ switch (true) do {
           playSound "RscDisplayCurator_visionMode";
           true;
      };
+     case (_key in [1]): { //ESC
+          if (ctrlShown (_dialog displayCtrl 2)) exitWith {
+               (_dialog displayCtrl 2) ctrlShow false; true;
+          };
+          if (ctrlShown (_dialog displayCtrl 3)) exitWith {
+               (_dialog displayCtrl 3) ctrlShow false; true;
+          };
+
+          private _displayType = if (isMultiplayer) then { "RscDisplayMPInterrupt" } else { "RscDisplayInterrupt" };
+          _dialog createDisplay _displayType;
+
+          ((findDisplay 49) displayCtrl 103) ctrlEnable false;
+          ((findDisplay 49) displayCtrl 119) ctrlEnable false;
+          ((findDisplay 49) displayCtrl 104) ctrlSetEventHandler ["buttonClick", "['end1',false,0] call BIS_fnc_endMission;"];
+          true;
+     };
+     case (_key in [59]): { //F1 - Toogle Controls
+
+          if (ctrlShown (_dialog displayCtrl 3)) then {
+               //hide controls
+               (_dialog displayCtrl 3) ctrlShow false;
+          } else {
+               //show map
+               (_dialog displayCtrl 3) ctrlShow true;
+          };
+          true;
+     };
+     case (_key in [61]): { //F3 - Search
+
+          //focus search edit
+          ctrlSetFocus (_dialog displayCtrl 12);
+
+          //show panel
+          if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
+               (_dialog displayCtrl 1) ctrlSetFade 0;
+               (_dialog displayCtrl 1) ctrlCommit 0;
+          };
+          true;
+     };
+
+     case (_key in [33]): { //F - (+ CTRL) Search
+
+          if (_ctrl and !_shift and !_alt) then {
+               //focus search edit
+               ctrlSetFocus (_dialog displayCtrl 12);
+
+               //show panel
+               if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
+                    (_dialog displayCtrl 1) ctrlSetFade 0;
+                    (_dialog displayCtrl 1) ctrlCommit 0;
+               };
+          };
+          true;
+     };
+
+     case (_key in [50]): { //M - Toggle map
+          if (ctrlShown (_dialog displayCtrl 2)) then {
+               //hide map
+               (_dialog displayCtrl 2) ctrlShow false;
+          } else {
+               //center map on camera
+               (_dialog displayCtrl 23) ctrlMapAnimAdd [0, 0.05, (call zade_spectator_fnc_camera)];
+               ctrlMapAnimCommit (_dialog displayCtrl 23);
+
+               //show map
+               (_dialog displayCtrl 2) ctrlShow true;
+          };
+          true;
+     };
+     case (_key in [20]): { //T - Toggle TFAR
+
+          [] call zade_spectator_fnc_toggleTFAR;
+          true;
+     };
+     case (46): { //C - Cycle cammode
+          private _camMode = (["EXTERNAL","FREECAM","INTERNAL"] find zade_spectator_camMode);
+          if (_ctrl) then {
+               _camMode = (["INTERNAL","EXTERNAL","FREECAM"] find zade_spectator_camMode);
+          };
+          (_dialog displayCtrl 17) lbSetCurSel _camMode;
+          [(["FREECAM","INTERNAL","EXTERNAL"] select _camMode)] call zade_spectator_fnc_switchCamMode;
+          true;
+     };
      case (_key in [48]): {  //B - Toggle 3D-Marker
           if (zade_spectator_3dMarker) then {
                ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
@@ -195,5 +215,3 @@ switch (true) do {
          hintSilent format ["No action for key %1",_key];
      };
 };
-
-//actionKeys "CameraTarget"
