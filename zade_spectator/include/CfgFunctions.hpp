@@ -19,6 +19,7 @@ class zade_spectator {
 		class isMedic {};
 		class isUnconscious {};
 		class onDraw3D {};
+		class splitString {};
 		class switchCamMode {};
 		class switchTarget {};
 		class toggleTFAR {};

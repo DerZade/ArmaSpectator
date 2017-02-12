@@ -26,14 +26,12 @@ if (missionNamespace getVariable ["zade_spectator_editFocused",false]) exitWith 
 
 switch (true) do {
      case (_key in (actionKeys "CameraTarget")): {  //F - Move to target
-          hint "yolo1";
 
           switch (zade_spectator_camMode) do {
                case "EXTERNAL": {
                     zade_spectator_vector = [0,-7,3];
                };
                case "FREECAM": {
-                    hint "yolo2";
                     private _pos = [zade_spectator_target, 7,(direction zade_spectator_target -180)] call BIS_fnc_relPos;
                     _pos set [2,3];
                     zade_spectator_camera setPos _pos;
@@ -131,8 +129,10 @@ switch (true) do {
                //hide controls
                (_dialog displayCtrl 3) ctrlShow false;
           } else {
-               //show map
+               //show controls
                (_dialog displayCtrl 3) ctrlShow true;
+               {(_dialog displayCtrl _x) ctrlShow false;} forEach [36,37,38];
+               (_dialog displayCtrl (36+(lbCurSel (_dialog displayCtrl 39)))) ctrlShow true;
           };
           true;
      };

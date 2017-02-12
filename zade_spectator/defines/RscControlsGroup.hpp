@@ -22,6 +22,7 @@ class zade_spectator_RscControlsGroup
 		autoScrollDelay = 5;
 		autoScrollRewind = 0;
 		shadow=0;
+		scrollSpeed = 0.06;
 	};
 	class HScrollbar: ScrollBar
 	{

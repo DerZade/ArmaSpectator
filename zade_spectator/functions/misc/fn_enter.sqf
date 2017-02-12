@@ -55,7 +55,7 @@ if ("task_force_radio" in activatedAddons) then {
 ["zade_spectator_3dIcons","onEachFrame",zade_spectator_fnc_onDraw3D] call BIS_fnc_addStackedEventHandler;
 
 addMissionEventHandler ["HandleDisconnect",{call zade_spectator_fnc_loadUnitsTree}];
-addMissionEventHandler ["Ended",{hint "lol"; zade_spectator_camera cameraEffect ["Terminate", "back"]; (uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;}];
+addMissionEventHandler ["Ended",{zade_spectator_camera cameraEffect ["Terminate", "back"]; (uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;}];
 
 zade_specator_spectators pushBack player;
 publicVariable "zade_specator_spectators";
