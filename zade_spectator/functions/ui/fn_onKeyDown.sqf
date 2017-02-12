@@ -24,8 +24,8 @@ params ["_dialog","_key","_shift","_ctrl","_alt"];
 if (missionNamespace getVariable ["zade_spectator_editFocused",false] and _key isEqualTo 1) exitWith {true;};
 if (missionNamespace getVariable ["zade_spectator_editFocused",false]) exitWith {};
 
-switch (_key) do {
-     case (1): { //ESC
+switch (true) do {
+     case (_key in [1]): { //ESC
           if (ctrlShown (_dialog displayCtrl 2)) exitWith {
                (_dialog displayCtrl 2) ctrlShow false; true;
           };
@@ -41,7 +41,7 @@ switch (_key) do {
           ((findDisplay 49) displayCtrl 104) ctrlSetEventHandler ["buttonClick", "['end1',false,0] call BIS_fnc_endMission;"];
           true;
      };
-     case (59): { //F1 - Toogle Controls
+     case (_key in [59]): { //F1 - Toogle Controls
 
           if (ctrlShown (_dialog displayCtrl 3)) then {
                //hide controls
@@ -52,7 +52,7 @@ switch (_key) do {
           };
           true;
      };
-     case (61): { //F3 - Search
+     case (_key in [61]): { //F3 - Search
 
           //focus search edit
           ctrlSetFocus (_dialog displayCtrl 12);
@@ -64,7 +64,7 @@ switch (_key) do {
           };
           true;
      };
-     case (33): { //F - (+ CTRL) Search
+     case (_key in [33]): { //F - (+ CTRL) Search
 
           if (_ctrl and !_shift and !_alt) then {
                //focus search edit
@@ -78,7 +78,7 @@ switch (_key) do {
           };
           true;
      };
-     case (14): { //BACKSPACE - Toggle Interface
+     case (_key in actionKeys "CameraInterface"): { //BACKSPACE - Toggle Interface
           if (ctrlShown (_dialog displayCtrl 1)) then {
                //show fake panel
                (_dialog displayCtrl 5) ctrlShow true;
@@ -116,7 +116,7 @@ switch (_key) do {
           };
           true;
      };
-     case (50): { //M - Toggle map
+     case (_key in [50]): { //M - Toggle map
           if (ctrlShown (_dialog displayCtrl 2)) then {
                //hide map
                (_dialog displayCtrl 2) ctrlShow false;
@@ -130,7 +130,7 @@ switch (_key) do {
           };
           true;
      };
-     case (20): { //T - Toggle TFAR
+     case (_key in [20]): { //T - Toggle TFAR
 
           [] call zade_spectator_fnc_toggleTFAR;
           true;
@@ -144,14 +144,14 @@ switch (_key) do {
           [(["FREECAM","INTERNAL","EXTERNAL"] select _camMode)] call zade_spectator_fnc_switchCamMode;
           true;
      };
-     case (56): { //LALT - Speed
+     case (_key in actionKeys "CameraMoveTurbo2"): { //LALT - Speed
          if (zade_spectator_cammode isEqualTo "FREECAM") then {
                zade_spectator_camera camCommand "speedDefault 2.0";
                zade_spectator_camera camCommand "speedBoost 5.0";
          };
          true;
      };
-     case (49): { //N - Toogle Vision mode
+     case (_key in (actionKeys "CameraVisionMode")): { //N - Toogle Vision mode
           zade_spectator_visionMode = ([[["NORMAL","NV"],["NV","TI WHOT"],["TI WHOT","TI BHOT"],["TI BHOT","NORMAL"]],zade_spectator_visionMode] call BIS_fnc_getfromPairs);
 
           //reset cam vision mode
@@ -172,7 +172,7 @@ switch (_key) do {
           playSound "RscDisplayCurator_visionMode";
           true;
      };
-     case (48): {  //B - Toggle 3D-Marker
+     case (_key in [48]): {  //B - Toggle 3D-Marker
           if (zade_spectator_3dMarker) then {
                ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
           } else {
@@ -181,7 +181,7 @@ switch (_key) do {
           zade_spectator_3dMarker = !zade_spectator_3dMarker;
           true;
      };
-     case (82): {  //0 NUM - Switch in sight
+     case (_key in [82]): {  //0 NUM - Switch in sight
           if (zade_spectator_camMode isEqualTo "INTERNAL") then {
                if (cameraView isEqualTo "GUNNER") then {
                     zade_spectator_target switchCamera "INTERNAL";
@@ -195,3 +195,5 @@ switch (_key) do {
          hintSilent format ["No action for key %1",_key];
      };
 };
+
+//actionKeys "CameraTarget"
