@@ -27,8 +27,6 @@ if (_add) then {
      _unit setVariable ["zade_spectator_EHs", [_id1,_id2,_id3], true];
      _unit setVariable ["zade_spectator_name", (name _unit), true];
 
-
-
      zade_spectator_spectateableUnits pushBack _unit;
      publicVariable "zade_spectator_spectateableUnits";
 } else {
@@ -44,6 +42,6 @@ if (_add) then {
      zade_spectator_spectateableUnits deleteAt (zade_spectator_spectateableUnits find _unit);
      publicVariable "zade_spectator_spectateableUnits";
 
-     //for all spectaotr: load units tree and switch target if cur target is removed unit
+     //for all spectators: load units tree and switch target if cur target is removed unit
      [[[_unit],{[] call zade_spectator_fnc_loadUnitsTree; if (zade_spectator_target isEqualTo (_this select 0)) then {[([] call zade_spectator_fnc_allUnits) select 0] call zade_spectator_fnc_switchTarget;};}],"BIS_fnc_call",zade_specator_spectators] call BIS_fnc_MP;
 };
