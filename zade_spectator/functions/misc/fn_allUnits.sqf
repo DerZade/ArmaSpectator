@@ -1,6 +1,6 @@
 /*
  * Author: Derzade
- * Return all spectetable units
+ * Return all spectetable units depending on which sides the spectator is allowed to spectate 
  *
  * Arguments:
  * 0: Side <SIDE> (Optional)

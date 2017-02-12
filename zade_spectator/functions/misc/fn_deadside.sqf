@@ -1,3 +1,19 @@
+/*
+ * Author: Derzade
+ * Returns side of dead unit
+ *
+ * Arguments:
+ * 0: Unit <OBJECT>
+ *
+ * Return Value:
+ * Camera
+ *
+ * Example:
+ * [_unit] call zade_spectator_fnc_deadside;
+ *
+ * Public: No
+ */
+
 params ["_unit"];
 
 {
