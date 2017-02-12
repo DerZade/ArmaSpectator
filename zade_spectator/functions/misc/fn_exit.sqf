@@ -14,7 +14,7 @@
  * Public: No
  */
 
-params ["_unit",(player getVariable "zade_spectator_oldPlayer")];
+params [["_unit",(player getVariable "zade_spectator_oldPlayer")]];
 
 closeDialog 0;
 
@@ -37,3 +37,4 @@ switch (zade_spectator_camMode) do {
 
 //switch to new unit
 selectPlayer _unit;
+_unit switchCamera "INTERNAL";
