@@ -13,7 +13,7 @@ class zade_spectator_RscText
 	style = 0;
 	shadow = 0;
 	colorShadow[] = {0,0,0,0.5};
-	font = "RobotoCondensedLight";
+	font = "RobotoCondensed";
 	SizeEx = 5 * GRID_H;
 	linespacing = 1;
 };

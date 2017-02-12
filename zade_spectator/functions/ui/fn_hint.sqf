@@ -1,9 +1,9 @@
 params ["_text",["_color",[1,1,1,1]]];
 
-("zade_spectator_hint" call BIS_fnc_rscLayer) cutRsc ["zade_spectator_TFAR","PLAIN"];
+("zade_spectator_hint" call BIS_fnc_rscLayer) cutRsc ["zade_spectator_hint","PLAIN"];
 
-private _disp = uiNamespace getVariable ['zade_spectator_hint',nil];
-//waitUntil {_disp = uiNamespace getVariable ['zade_spectator_hint',nil]; !isNil "_disp"};
+waitUntil {! isNull (uiNamespace getVariable ['zade_spectator_hint',displayNull])};
+private _disp = uiNamespace getVariable ['zade_spectator_hint',displayNull];
 
 (_disp displayCtrl 1) ctrlSetText _text;
 (_disp displayCtrl 1) ctrlSetTextColor _color;
