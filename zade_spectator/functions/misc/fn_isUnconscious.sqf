@@ -6,7 +6,7 @@
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * Is Medic ? <BOOL>
+ * Is Unconscious ? <BOOL>
  *
  * Example:
  * [player] call zade_spectator_fnc_isUnconscious;
@@ -16,4 +16,4 @@
 
 params ["_unit"];
 
-((unitPos _unit) isEqualTo "Down")
+(_unit getVariable ["ACE_isUnconscious", false] || lifeState _unit == "INCAPACITATED")
