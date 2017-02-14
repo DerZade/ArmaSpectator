@@ -88,6 +88,9 @@ switch (true) do {
          true;
      };
      case (_key in (actionKeys "CameraVisionMode")): { //N - Toogle Vision mode
+
+          if (zade_spectator_cammode isEqualTo "INTERNAL") exitWith {true;};
+
           zade_spectator_visionMode = ([[["NORMAL","NV"],["NV","TI WHOT"],["TI WHOT","TI BHOT"],["TI BHOT","NORMAL"]],zade_spectator_visionMode] call BIS_fnc_getfromPairs);
 
           //reset cam vision mode

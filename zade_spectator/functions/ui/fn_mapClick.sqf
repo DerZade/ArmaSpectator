@@ -40,7 +40,7 @@ switch (_btn) do {
           if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX) and _mapScale < 0.5) then {
                {
                     {
-                    if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
+                         if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
                     } forEach (_x select 1);
                } forEach zade_spectator_dead;
           };
