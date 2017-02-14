@@ -18,6 +18,7 @@ class zade_spectator_main
 			colorBackground[]={1,1,1,0};
 			style=16;
 			onMouseButtonDown = "_this call zade_spectator_fnc_onMouseButtonDown;";
+			onMouseButtonDblClick = "_this call zade_spectator_fnc_onMouseButtonDblClick;";
 			onMouseZChanged = "_this call zade_spectator_fnc_onMouseZChanged;";
 		};
 	};

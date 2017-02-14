@@ -40,6 +40,7 @@ class zade_spectator {
 		class onKeyUp {};
 		class onLoad_controlsList {};
 		class onLoad_main {};
+		class onMouseButtonDblClick {};
 		class onMouseButtonDown {};
 		class onMouseMoving {};
 		class onMouseZChanged{};

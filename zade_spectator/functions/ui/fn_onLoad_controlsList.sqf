@@ -27,8 +27,9 @@ private _displayname = {if (count (actionKeys _this) > 1) then {([actionKeysName
 _rows = switch (tolower _type) do {
      case ("general"): {
           [
-          [localize "str_3den_display3den_menubar_search_text",format ['"%1+%2", %3',toString (toArray keyName 29 - [34]),toString (toArray keyName 33 - [34]), keyName 61]],
+          ['Switch to Unit',"2x LMB"],
           [format ["%1*",actionName "CameraInterface"] , "CameraInterface" call _displayname],
+          [localize "str_3den_display3den_menubar_search_text",format ['"%1+%2", %3',toString (toArray keyName 29 - [34]),toString (toArray keyName 33 - [34]), keyName 61]],
           [localize "str_3den_display3den_menubar_options_text",keyName 59],
           [localize "str_3den_display3den_menubar_map_text",keyName 50],
           ['Toggle Camera-Mode',keyName 46],
@@ -59,10 +60,10 @@ _rows = switch (tolower _type) do {
           [
           [actionName "CameraMoveForward", '"Mouse wheel up"'],
           [actionName "CameraMoveBackward", '"Mouse wheel down"'],
-          [actionName "CameraMoveLeft", '"Sec. Mouse Btn. + Mouse right"'],
-          [actionName "CameraMoveRight", '"Sec. Mouse Btn. + Mouse left"'],
-          [actionName "CameraMoveUp", '"Sec. Mouse Btn. + Mouse down"'],
-          [actionName "CameraMoveDown", '"Sec. Mouse Btn. + Mouse up"']
+          [actionName "CameraMoveLeft", '"RMB + Mouse right"'],
+          [actionName "CameraMoveRight", '"RMB + Mouse left"'],
+          [actionName "CameraMoveUp", '"RMB + Mouse down"'],
+          [actionName "CameraMoveDown", '"RMB + Mouse up"']
           ]
      };
 };
