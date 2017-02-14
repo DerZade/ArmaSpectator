@@ -13,12 +13,13 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 params ["_listbox",["_type",""]];
 
 _listbox ctrlEnable false;
 
 if (_type isEqualTo "") then {
-     _type = switch (ctrlIDC _listbox) do {case 35: {"general"};case 36: {"camera_freecam"};case 37: {"camera_external"};case 38: {"camera_internal"};};
+     _type = switch (ctrlIDC _listbox) do {case IDC_CONTROLS_GENERAL_LIST: {"general"};case IDC_CONTROLS_FREECAM_LIST: {"camera_freecam"};case IDC_CONTROLS_EXTERNAL_LIST: {"camera_external"};case IDC_CONTROLS_INTERNAL_LIST: {"camera_internal"};};
 };
 
 private _displayname = {if (count (actionKeys _this) > 1) then {([actionKeysNames _this," or "] call zade_spectator_fnc_splitString) joinString ", "} else {actionKeysNames _this}};

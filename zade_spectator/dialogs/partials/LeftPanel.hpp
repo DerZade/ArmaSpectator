@@ -9,7 +9,7 @@ class background : zade_spectator_RscText
 };
 class side: zade_spectator_RscToolbox
 {
-     idc = 11;
+     idc = IDC_LEFT_SIDE;
      x = 1 * GRID_W;
      y = 1 * GRID_H;
      w = (LEFTPANEL_W - 2) * GRID_W;
@@ -21,7 +21,7 @@ class side: zade_spectator_RscToolbox
 };
 class searchEdit : zade_spectator_RscEdit
 {
-     idc = 12;
+     idc = IDC_LEFT_EDIT;
      x = 2 * GRID_W;
      y = 14 * GRID_H;
      w = (LEFTPANEL_W - 5 - 5.5 * 3) * GRID_W;
@@ -32,7 +32,7 @@ class searchEdit : zade_spectator_RscEdit
 };
 class searchButton : zade_spectator_RscButton
 {
-     idc = 13;
+     idc = IDC_LEFT_SEARCH;
      style = 0x02 + 0x30 + 0x800;
      x = (LEFTPANEL_W - 3 - 5.5 * 3) * GRID_W;
      y = 14 * GRID_H;
@@ -56,8 +56,8 @@ class expand : collapse
 };
 class tree: zade_spectator_RscTree
 {
-     idc = 14;
-     onSetFocus = "_this spawn {sleep 0.01; ctrlSetFocus ((ctrlParent (_this select 0)) displayCtrl 4);};";
+     idc = IDC_LEFT_TREE;
+     onSetFocus = QUOTE(_this spawn {sleep 0.01; ctrlSetFocus ((ctrlParent (_this select 0)) displayCtrl IDC_FOCUSBUTTON);};);
      onTreeDblClick = "_this call zade_spectator_fnc_onTreeDblClick;";
      onTreeSelChanged = "params ['_ctrl','_path'];if (_path isEqualTo [-1]) exitWith {};_ctrl tvSetCurSel [-1];";
      x = 0;
@@ -67,12 +67,12 @@ class tree: zade_spectator_RscTree
 };
 class tree_searchResults: tree
 {
-     idc = 15;
+     idc = IDC_LEFT_RESULTS;
      show = 0;
 };
 class showDeadCheckBox : zade_spectator_RscCheckbox
 {
-     idc = 16;
+     idc = IDC_LEFT_CHECKBOX;
      checked = 1;
      x = 5 * GRID_W;
      y = safezoneH - 22 * GRID_H;
@@ -90,7 +90,7 @@ class showDeadText : zade_spectator_RscText
 };
 class view: side
 {
-     idc = 17;
+     idc = IDC_LEFT_CAMMODE;
      y = safezoneH - 14 * GRID_H;
      h = 12 * GRID_H;
      columns=3;

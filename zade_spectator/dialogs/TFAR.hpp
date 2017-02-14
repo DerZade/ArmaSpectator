@@ -9,7 +9,7 @@ class zade_spectator_TFAR
 	{
 		class spectatorChannel : zade_spectator_RscPicture
 		{
-			idc = 1;
+			idc = IDC_TFAR_SPEC;
 			x = 0.45 * safezoneW + safezoneX;
 			y = 0 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -21,7 +21,7 @@ class zade_spectator_TFAR
 		};
 		class VoicesChannel : spectatorChannel
 		{
-			idc = 2;
+			idc = IDC_TFAR_VOICE;
 			x = 0.5 * safezoneW + safezoneX;
 			text = "a3\ui_f\data\gui\cfg\CommunicationMenu\call_ca.paa";
 			colorText[]={1,1,1,1};
@@ -29,7 +29,7 @@ class zade_spectator_TFAR
 		};
 		class Description : zade_spectator_RscText
 		{
-			idc = 3;
+			idc = IDC_TFAR_DESC;
 			x = 0.45 * safezoneW + safezoneX;
 			y = 0.05 * safezoneH + safezoneY;
 			w = 0.1 * safezoneW;

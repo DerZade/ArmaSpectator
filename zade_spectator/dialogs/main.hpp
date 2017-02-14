@@ -10,7 +10,6 @@ class zade_spectator_main
 	{
 		class mouseHandler: zade_spectator_RscStructuredText
 		{
-			idc=42989;
 			text="";
 			x="safeZoneXAbs";
 			y="safeZoneY";
@@ -25,7 +24,7 @@ class zade_spectator_main
 	class Controls {
 		class LeftPanel: zade_spectator_RscControlsGroup
 		{
-			idc = 1;
+			idc = IDC_LEFTPANEL;
 			x = 0 * safezoneW + safezoneX;
 			y = 0 * safezoneH + safezoneY;
 			w = LEFTPANEL_W * GRID_W;
@@ -38,7 +37,7 @@ class zade_spectator_main
 		};
 		class map: zade_spectator_RscControlsGroup
 		{
-			idc = 2;
+			idc = IDC_MAP;
 			show = 0;
 			x = safezoneW / 2 - (MAP_W * GRID_W) / 2 + safezoneX;
 			y = safezoneH / 2 - (MAP_H * GRID_H) / 2 + safezoneY;
@@ -52,7 +51,7 @@ class zade_spectator_main
 		};
 		class Controls: zade_spectator_RscControlsGroup
 		{
-			idc = 3;
+			idc = IDC_CONTROLS;
 			show = 0;
 			x = safezoneW / 2 - (CONTROLS_W * GRID_W) / 2 + safezoneX;
 			y = safezoneH / 2 - (CONTROLS_H * GRID_H) / 2 + safezoneY;
@@ -64,7 +63,7 @@ class zade_spectator_main
 			};
 		};
 		class FocusButton : zade_spectator_RscButton {
-			idc = 4;
+			idc = IDC_FOCUSBUTTON;
 			text = "";
 			x = -0.1 * safezoneW + safezoneX;
 			y = -0.1 * safezoneH + safezoneY;
@@ -73,7 +72,7 @@ class zade_spectator_main
 		};
 		class FakePanel : zade_spectator_RscStructuredText
 		{
-			idc = 5;
+			idc = IDC_FAKEPANEL;
 			show = 0;
 			x = 0 * safezoneW + safezoneX;
 			y = 0 * safezoneH + safezoneY;

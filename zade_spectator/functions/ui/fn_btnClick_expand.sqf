@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 params ["_ctrl"];
 
 {
@@ -20,4 +21,4 @@ params ["_ctrl"];
      for "_i" from 0 to ((_tree tvCount []) - 1) do {
           _tree tvExpand [_i];
      };
-} forEach [14,15]; //for normal and search results tree
+} forEach [IDC_LEFT_TREE,IDC_LEFT_RESULTS]; //for normal and search results tree

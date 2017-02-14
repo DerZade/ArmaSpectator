@@ -13,7 +13,7 @@
  *
  * Public: No
  */
-
+#include "..\..\idcmacros.hpp"
 params ["_ctrl"];
 
 private _mapScale = ctrlMapScale _ctrl;
@@ -29,7 +29,7 @@ private _dialog = ctrlParent _ctrl;
      } forEach ([] call zade_spectator_fnc_allUnits);
 
      //dead units
-     if (cbChecked (_dialog displayCtrl 16) and _mapScale < 0.5) then {
+     if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX) and _mapScale < 0.5) then {
           {
                {
                     if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
@@ -57,7 +57,7 @@ private _dialog = ctrlParent _ctrl;
 
           //color
           private _color = [(side _x)] call BIS_fnc_sideColor;;
-          if (_x isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+          if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
           _ctrl drawIcon [_icon, _color, getPos _x, 24, 24, getDir _x, "", 0, 0.03, 'RobotoCondensed', 'right'];
 
@@ -65,14 +65,14 @@ private _dialog = ctrlParent _ctrl;
           if ((_mapScale < 0.1) or (_x isEqualTo _cursorTarget)) then {
                private _textalpha = if (_mapScale > 0.05) then {(0.1 - _mapScale) / 0.05} else {1};
                _color set [3,_textalpha];
-               if (_x isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+               if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
                _ctrl drawIcon ["#(argb,8,8,3)color(0,0,0,0)", _color, getPos _x, 24, 24, 0, name _x, 0, 0.03, 'RobotoCondensed', 'right'];
           };
      } forEach ([] call zade_spectator_fnc_allUnits);
 
 
      //draw dead
-     if (cbChecked (_dialog displayCtrl 16) and _mapScale < 0.5) then {
+     if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX) and _mapScale < 0.5) then {
      {
           private _group = _x;
           if ((side (_group select 0)) in (missionNamespace getVariable ["zade_spectator_allowedSides",[west,east,resistance,civilian]])) then {
@@ -82,7 +82,7 @@ private _dialog = ctrlParent _ctrl;
                     private _color = [0.1,0.1,0.1,1];
                     private _alpha = if (_mapScale > 0.25 or !(_x isEqualTo _cursorTarget)) then {(0.3 - _mapScale) / 0.05} else {1};
                     _color set [3,_alpha];
-                    if (_x isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+                    if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
                     _ctrl drawIcon ["\a3\Ui_F_Curator\Data\CfgMarkers\kia_ca.paa", _color, getPos _x, 24, 24,0, "", 0, 0.03, 'RobotoCondensed', 'right'];
 
@@ -91,7 +91,7 @@ private _dialog = ctrlParent _ctrl;
                          //text color
                          private _textalpha = if (_mapScale > 0.05) then {(0.1 - _mapScale) / 0.05} else {1};
                          _color set [3,_textalpha];
-                         if (_x isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+                         if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
                          _ctrl drawIcon ["#(argb,8,8,3)color(0,0,0,0)", _color, getPos _x, 24, 24, 0,  (_x getVariable "zade_spectator_name"), 0, 0.03, 'RobotoCondensed', 'right'];
                     };
@@ -106,7 +106,7 @@ private _dialog = ctrlParent _ctrl;
           _x params ["_object","_icon","_color","_text","_drawDistance","_size3D","_size2D"];
 
           private _pos = if (typeName _object isEqualTo "OBJECT") then {getPos _object}else {_object};
-          if (_object isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+          if (_object isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
           _ctrl drawIcon [_icon, _color,_pos, _size2D, _size2D, 0, "", 0, 0.03, 'RobotoCondensed', 'right'];
 
@@ -115,7 +115,7 @@ private _dialog = ctrlParent _ctrl;
                //text color
                private _textalpha = if (_mapScale > 0.45) then {(0.5 - _mapScale) / 0.05} else {1};
                _color set [3,_textalpha];
-               if (_x isEqualTo _cursorTarget) then {_color = [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]};
+               if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
                _ctrl drawIcon ["", _color, _pos, _size2D, _size2D, 0, _text, 0, 0.03, 'RobotoCondensed', 'right'];
           };

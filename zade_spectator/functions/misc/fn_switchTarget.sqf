@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 params ["_unit"];
 
 zade_spectator_target = _unit;
@@ -52,5 +53,5 @@ if !(alive zade_spectator_target) then {
      _side = [_unit] call zade_spectator_fnc_deadside;
 };
 
-(_dialog displayCtrl 11) lbSetCurSel ([west,east,resistance,civilian] find _side);
+(_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([west,east,resistance,civilian] find _side);
 [] call zade_spectator_fnc_loadUnitsTree;

@@ -13,14 +13,15 @@
  *
  * Public: No
  */
- disableSerialization;
+#include "..\..\idcmacros.hpp"
+disableSerialization;
 
 private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];
 
 if (isNil "_dialog") exitWith {};
 
-private _tree = _dialog displayCtrl 14;
-private _side = [west,east,resistance,civilian] select ((lbCurSel (_dialog displayCtrl 11)) max 0);
+private _tree = _dialog displayCtrl IDC_LEFT_TREE;
+private _side = [west,east,resistance,civilian] select ((lbCurSel (_dialog displayCtrl IDC_LEFT_SIDE)) max 0);
 
 private _allUnits = +([_side] call zade_spectator_fnc_allUnits);
 private _addedGrps = [];
@@ -73,7 +74,7 @@ if !(_side in (missionNamespace getVariable ["zade_spectator_allowedSides",[west
           } forEach (units _grp);
 
           //add dead units
-          if (cbChecked (_dialog displayCtrl 16)) then {
+          if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
                private _index = [zade_spectator_dead,_grp] call zade_spectator_fnc_findInPairs;
                if !(_index isEqualTo -1) then {
                     {
@@ -101,7 +102,7 @@ if !(_side in (missionNamespace getVariable ["zade_spectator_allowedSides",[west
 } forEach allGroups;
 
 //add dead groups
-if (cbChecked (_dialog displayCtrl 16)) then {
+if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
      {
           //check for side
           if (side (_x select 0) isEqualTo _side and !((_x select 0) in _addedGrps)) then {
@@ -133,11 +134,11 @@ if (cbChecked (_dialog displayCtrl 16)) then {
 };
 
 //select the target
-_tree tvsetPictureColor [_targetPath,[(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]];
-_tree tvsetData [_targetPath,str [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]];
+_tree tvsetPictureColor [_targetPath,ACTIVECOLOR_SCRIPT];
+_tree tvsetData [_targetPath,str ACTIVECOLOR_SCRIPT];
 
-_tree tvsetColor [_targetPath,[(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77]),(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51]),(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08]), 1]];
+_tree tvsetColor [_targetPath,ACTIVECOLOR_SCRIPT];
 
-if !(ctrlText (_dialog displayCtrl 12) isEqualTo "") then {
-     [(_dialog displayCtrl 12)] call zade_spectator_fnc_keyUp_search;
+if !(ctrlText (_dialog displayCtrl IDC_LEFT_EDIT) isEqualTo "") then {
+     [(_dialog displayCtrl IDC_LEFT_EDIT)] call zade_spectator_fnc_keyUp_search;
 };

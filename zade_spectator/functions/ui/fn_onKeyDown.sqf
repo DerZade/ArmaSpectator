@@ -17,6 +17,7 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 disableSerialization;
 params ["_dialog","_key","_shift","_ctrl","_alt"];
 
@@ -42,37 +43,37 @@ switch (true) do {
           true;
      };
      case (_key in actionKeys "CameraInterface"): { //BACKSPACE - Toggle Interface
-          if (ctrlShown (_dialog displayCtrl 1)) then {
+          if (ctrlShown (_dialog displayCtrl IDC_LEFTPANEL)) then {
                //show fake panel
-               (_dialog displayCtrl 5) ctrlShow true;
-               (_dialog displayCtrl 5) ctrlSetFade (ctrlFade (_dialog displayCtrl 1)); //apply same fade
-               (_dialog displayCtrl 5) ctrlCommit 0;
+               (_dialog displayCtrl IDC_FAKEPANEL) ctrlShow true;
+               (_dialog displayCtrl IDC_FAKEPANEL) ctrlSetFade (ctrlFade (_dialog displayCtrl IDC_LEFTPANEL)); //apply same fade
+               (_dialog displayCtrl IDC_FAKEPANEL) ctrlCommit 0;
 
                //hide panel
-               (_dialog displayCtrl 1) ctrlSetFade 1;
-               (_dialog displayCtrl 1) ctrlCommit 0.2;
-               _null = [(_dialog displayCtrl 1)] spawn {disableSerialization; sleep 0.2; (_this select 0) ctrlShow false;};
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade 1;
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0.2;
+               _null = [(_dialog displayCtrl IDC_LEFTPANEL)] spawn {disableSerialization; sleep 0.2; (_this select 0) ctrlShow false;};
           } else {
                //show panel
-               (_dialog displayCtrl 1) ctrlShow true;
-               (_dialog displayCtrl 1) ctrlSetFade (ctrlFade (_dialog displayCtrl 5)); //apply same fade
-               (_dialog displayCtrl 1) ctrlCommit 0.2;
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlShow true;
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade (ctrlFade (_dialog displayCtrl IDC_FAKEPANEL)); //apply same fade
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0.2;
 
                //show hint if there is one currently open
                private _display = uiNamespace getVariable ['zade_spectator_hint',nil];
                if (!isNil "_display") then {
-                    (_display displayCtrl 1) ctrlSetFade 0;
+                    (_display displayCtrl IDC_LEFTPANEL) ctrlSetFade 0;
                };
 
                //hide search results
-               if (ctrlText (_dialog displayCtrl 12) isEqualTo "") then {
-                    (_dialog displayCtrl 15) ctrlShow false;
+               if (ctrlText (_dialog displayCtrl IDC_LEFT_EDIT) isEqualTo "") then {
+                    (_dialog displayCtrl IDC_LEFT_RESULTS) ctrlShow false;
                } else {
-                    (_dialog displayCtrl 14) ctrlShow false;
+                    (_dialog displayCtrl IDC_LEFT_TREE) ctrlShow false;
                };
 
                //hide fake panel
-               (_dialog displayCtrl 5) ctrlShow false;
+               (_dialog displayCtrl IDC_FAKEPANEL) ctrlShow false;
 
                //update tree
                [] call zade_spectator_fnc_loadUnitsTree;
@@ -108,11 +109,11 @@ switch (true) do {
           true;
      };
      case (_key in [1]): { //ESC
-          if (ctrlShown (_dialog displayCtrl 2)) exitWith {
-               (_dialog displayCtrl 2) ctrlShow false; true;
+          if (ctrlShown (_dialog displayCtrl IDC_MAP)) exitWith {
+               (_dialog displayCtrl IDC_MAP) ctrlShow false; true;
           };
-          if (ctrlShown (_dialog displayCtrl 3)) exitWith {
-               (_dialog displayCtrl 3) ctrlShow false; true;
+          if (ctrlShown (_dialog displayCtrl IDC_CONTROLS)) exitWith {
+               (_dialog displayCtrl IDC_CONTROLS) ctrlShow false; true;
           };
 
           private _displayType = if (isMultiplayer) then { "RscDisplayMPInterrupt" } else { "RscDisplayInterrupt" };
@@ -125,26 +126,26 @@ switch (true) do {
      };
      case (_key in [59]): { //F1 - Toogle Controls
 
-          if (ctrlShown (_dialog displayCtrl 3)) then {
+          if (ctrlShown (_dialog displayCtrl IDC_CONTROLS)) then {
                //hide controls
-               (_dialog displayCtrl 3) ctrlShow false;
+               (_dialog displayCtrl IDC_CONTROLS) ctrlShow false;
           } else {
                //show controls
-               (_dialog displayCtrl 3) ctrlShow true;
-               {(_dialog displayCtrl _x) ctrlShow false;} forEach [36,37,38];
-               (_dialog displayCtrl (36+(lbCurSel (_dialog displayCtrl 39)))) ctrlShow true;
+               (_dialog displayCtrl IDC_CONTROLS) ctrlShow true;
+               {(_dialog displayCtrl _x) ctrlShow false;} forEach [IDC_CONTROLS_FREECAM_LIST,IDC_CONTROLS_EXTERNAL_LIST,IDC_CONTROLS_INTERNAL_LIST];
+               (_dialog displayCtrl (IDC_CONTROLS_FREECAM_LIST+(lbCurSel (_dialog displayCtrl IDC_CONTROLS_TOOLBOX)))) ctrlShow true;
           };
           true;
      };
      case (_key in [61]): { //F3 - Search
 
           //focus search edit
-          ctrlSetFocus (_dialog displayCtrl 12);
+          ctrlSetFocus (_dialog displayCtrl IDC_LEFT_EDIT);
 
           //show panel
-          if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
-               (_dialog displayCtrl 1) ctrlSetFade 0;
-               (_dialog displayCtrl 1) ctrlCommit 0;
+          if !(ctrlFade (_dialog displayCtrl IDC_LEFTPANEL) isEqualTo 0) then {
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade 0;
+               (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0;
           };
           true;
      };
@@ -153,28 +154,28 @@ switch (true) do {
 
           if (_ctrl and !_shift and !_alt) then {
                //focus search edit
-               ctrlSetFocus (_dialog displayCtrl 12);
+               ctrlSetFocus (_dialog displayCtrl IDC_LEFT_EDIT);
 
                //show panel
-               if !(ctrlFade (_dialog displayCtrl 1) isEqualTo 0) then {
-                    (_dialog displayCtrl 1) ctrlSetFade 0;
-                    (_dialog displayCtrl 1) ctrlCommit 0;
+               if !(ctrlFade (_dialog displayCtrl IDC_LEFTPANEL) isEqualTo 0) then {
+                    (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade 0;
+                    (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0;
                };
           };
           true;
      };
 
      case (_key in [50]): { //M - Toggle map
-          if (ctrlShown (_dialog displayCtrl 2)) then {
+          if (ctrlShown (_dialog displayCtrl IDC_MAP)) then {
                //hide map
-               (_dialog displayCtrl 2) ctrlShow false;
+               (_dialog displayCtrl IDC_MAP) ctrlShow false;
           } else {
                //center map on camera
-               (_dialog displayCtrl 23) ctrlMapAnimAdd [0, 0.05, (call zade_spectator_fnc_camera)];
-               ctrlMapAnimCommit (_dialog displayCtrl 23);
+               (_dialog displayCtrl IDC_MAP_MAP) ctrlMapAnimAdd [0, 0.05, (call zade_spectator_fnc_camera)];
+               ctrlMapAnimCommit (_dialog displayCtrl IDC_MAP_MAP);
 
                //show map
-               (_dialog displayCtrl 2) ctrlShow true;
+               (_dialog displayCtrl IDC_MAP) ctrlShow true;
           };
           true;
      };
@@ -183,12 +184,12 @@ switch (true) do {
           [] call zade_spectator_fnc_toggleTFAR;
           true;
      };
-     case (46): { //C - Cycle cammode
+     case (_key in [46]): { //C - Cycle cammode
           private _camMode = (["EXTERNAL","FREECAM","INTERNAL"] find zade_spectator_camMode);
           if (_ctrl) then {
                _camMode = (["INTERNAL","EXTERNAL","FREECAM"] find zade_spectator_camMode);
           };
-          (_dialog displayCtrl 17) lbSetCurSel _camMode;
+          (_dialog displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel _camMode;
           [(["FREECAM","INTERNAL","EXTERNAL"] select _camMode)] call zade_spectator_fnc_switchCamMode;
           true;
      };

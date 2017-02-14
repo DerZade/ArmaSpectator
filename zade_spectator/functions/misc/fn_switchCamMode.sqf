@@ -14,7 +14,7 @@
  * Public: No
  */
 disableSerialization;
-
+#include "..\..\idcmacros.hpp"
 params [["_camMode",""]];
 
 if !(_camMode in ["INTERNAL","EXTERNAL","FREECAM"]) exitWith {["Invalid cammode: %1",_camMode] call BIS_fnc_error;};
@@ -43,7 +43,7 @@ switch (zade_spectator_camMode) do {
 //update dialog if it's open
 private _dialog = uiNamespace getVariable 'zade_spectator_main';
 if !(isNil "_dialog") then {
-     (_dialog displayCtrl 17) lbSetCurSel (["FREECAM","INTERNAL","EXTERNAL"] find _camMode);
+     (_dialog displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel (["FREECAM","INTERNAL","EXTERNAL"] find _camMode);
 };
 
 switch (_camMode) do {

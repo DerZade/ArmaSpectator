@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 params ["_disp"];
 
 if (isNil "zade_spectator_TFARSpectator") exitWith {
@@ -20,15 +21,15 @@ if (isNil "zade_spectator_TFARSpectator") exitWith {
           (_disp displayCtrl _i) ctrlSetFade 0.8;
           (_disp displayCtrl _i) ctrlCommit 0;
      };
-     (_disp displayCtrl 3) ctrlSetText "TFAR is disabled";
+     (_disp displayCtrl IDC_TFAR_DESC) ctrlSetText "TFAR is disabled";
 };
 
 if (zade_spectator_TFARSpectator) then {
-     (_disp displayCtrl 2) ctrlSetFade 0.8;
-     (_disp displayCtrl 2) ctrlCommit 0;
-     (_disp displayCtrl 3) ctrlSetText "Spectator-Channel";
+     (_disp displayCtrl IDC_TFAR_VOICE) ctrlSetFade 0.8;
+     (_disp displayCtrl IDC_TFAR_VOICE) ctrlCommit 0;
+     (_disp displayCtrl IDC_TFAR_DESC) ctrlSetText "Spectator-Channel";
 } else {
-     (_disp displayCtrl 1) ctrlSetFade 0.8;
-     (_disp displayCtrl 1) ctrlCommit 0;
-     (_disp displayCtrl 3) ctrlSetText "Comms-Channel";
+     (_disp displayCtrl IDC_TFAR_SPEC) ctrlSetFade 0.8;
+     (_disp displayCtrl IDC_TFAR_SPEC) ctrlCommit 0;
+     (_disp displayCtrl IDC_TFAR_DESC) ctrlSetText "Comms-Channel";
 };

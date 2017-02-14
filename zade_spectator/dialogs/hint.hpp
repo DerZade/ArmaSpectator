@@ -10,7 +10,7 @@ class zade_spectator_hint
 	{
 		class hint_text: zade_spectator_RscText
 		{
-               idc = 1;
+               idc = IDC_HINT_TEXT;
                x = safezoneW / 2 - (MAP_W *GRID_W  /2) + safezoneX;
           	y = safezoneY + 5.5 * GRID_H;
           	w = MAP_W * GRID_W;

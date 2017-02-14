@@ -5,12 +5,12 @@ class title: zade_spectator_RscText
 	y = 0;
 	w = CONTROLS_W * GRID_W;
 	h = 5.5 * GRID_H;
-	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",1};
+	colorBackground[] = ACTIVECOLOR;
 };
 class close: zade_spectator_RscButton
 {
 	style = 0x02 + 0x30 + 0x800;
-	onButtonClick = "((ctrlParent (_this select 0)) displayCtrl 3) ctrlShow false;";
+	onButtonClick = "(ctrlParentControlsGroup (_this select 0)) ctrlShow false;";
 	text = "\a3\3den\data\displays\display3den\search_end_ca.paa";
 	x = (CONTROLS_W - 5.5) * GRID_W;
 	y = 0;
@@ -31,7 +31,7 @@ class content: zade_spectator_RscControlsGroup
 	{
 		class background : zade_spectator_RscText
 		{
-			idc = 1337;
+			idc = IDC_CONTROLS_BACKGROUND;
 			x = 0;
 			y = 0;
 			w = CONTROLS_W * GRID_W;
@@ -49,7 +49,7 @@ class content: zade_spectator_RscControlsGroup
 		};
 		class general: zade_spectator_RscControlsGroup
 		{
-			idc = 31;
+			idc = IDC_CONTROLS_GENERAL_GRP;
 			x = 2.75 * GRID_W;
 			y = 11 * GRID_H;
 			w = (CONTROLS_W - 5.5) * GRID_W;
@@ -63,7 +63,7 @@ class content: zade_spectator_RscControlsGroup
 		};
 		class camera: general
 		{
-			idc = 32;
+			idc = IDC_CONTROLS_CAMERA_GRP;
 			y = 19.25 * GRID_H;
 			colorBackground[] = {-1,-1,-1,1};
 			onLoad = "";
@@ -74,7 +74,7 @@ class content: zade_spectator_RscControlsGroup
 		};
 		class general_expand_btn: zade_spectator_RscButton
 		{
-		     idc = 33;
+		     idc = IDC_CONTROLS_GENERAL_BTN;
 		     style = 0x02 + 0x30 + 0x800;
 		     onButtonClick = "_this call zade_spectator_fnc_btnClick_expandControls;";
 			text = "A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
@@ -89,7 +89,7 @@ class content: zade_spectator_RscControlsGroup
 		};
 		class camera_expand_btn: general_expand_btn
 		{
-		     idc = 34;
+		     idc = IDC_CONTROLS_CAMERA_BTN;
 			y = 19.75 * GRID_H;
 		};
 	};

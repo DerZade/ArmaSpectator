@@ -15,6 +15,7 @@
  */
 
 //units
+#include "..\..\idcmacros.hpp"
 {
      private _distance = _x distance (call zade_spectator_fnc_camera);
 
@@ -46,7 +47,7 @@
 private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];
 if (isNil "_dialog") exitWith {};
 
-if (cbChecked (_dialog displayCtrl 16)) then {
+if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
      {
           private _group = _x;
 

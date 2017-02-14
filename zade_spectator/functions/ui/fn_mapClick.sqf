@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+#include "..\..\idcmacros.hpp"
 params ["_ctrl","_btn"];
 
 private _mapScale = ctrlMapScale _ctrl;
@@ -36,7 +37,7 @@ switch (_btn) do {
                if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
           } forEach ([] call zade_spectator_fnc_allUnits);
           //dead units
-          if (cbChecked (_dialog displayCtrl 16) and _mapScale < 0.5) then {
+          if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX) and _mapScale < 0.5) then {
                {
                     {
                     if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
