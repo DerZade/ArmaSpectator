@@ -33,7 +33,7 @@ class zade_spectator_main
 			onMouseMoving = "_this call zade_spectator_fnc_panel_onMouseMoving;";
 			class Controls
 			{
-				#include "..\dialogs\LeftPanel.hpp"
+				#include "partials\LeftPanel.hpp"
 			};
 		};
 		class map: zade_spectator_RscControlsGroup
@@ -47,7 +47,7 @@ class zade_spectator_main
 			colorBackground[]={0,0,0,1};
 			class Controls
 			{
-				#include "..\dialogs\map.hpp"
+				#include "partials\map.hpp"
 			};
 		};
 		class Controls: zade_spectator_RscControlsGroup
@@ -60,7 +60,7 @@ class zade_spectator_main
 			h = CONTROLS_H * GRID_H;
 			class Controls
 			{
-				#include "..\dialogs\controls.hpp"
+				#include "partials\controls.hpp"
 			};
 		};
 		class FocusButton : zade_spectator_RscButton {

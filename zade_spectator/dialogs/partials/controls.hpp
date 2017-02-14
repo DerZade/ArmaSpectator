@@ -58,7 +58,7 @@ class content: zade_spectator_RscControlsGroup
 			colorBackground[] = {-1,-1,-1,1};
 			class controls
 			{
-				#include "..\dialogs\controls_general.hpp"
+				#include "controls_general.hpp"
 			};
 		};
 		class camera: general
@@ -69,7 +69,7 @@ class content: zade_spectator_RscControlsGroup
 			onLoad = "";
 			class controls
 			{
-				#include "..\dialogs\controls_camera.hpp"
+				#include "controls_camera.hpp"
 			};
 		};
 		class general_expand_btn: zade_spectator_RscButton
