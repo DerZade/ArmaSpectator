@@ -52,7 +52,7 @@ private _dialog = ctrlParent _ctrl;
                _icon = "iconManLeader";
           };
           if ([_x] call zade_spectator_fnc_isUnconscious) then {
-               _icon = "\a3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa";
+               _icon = "a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";
           };
 
           //color

@@ -30,7 +30,7 @@ if (count _cursorTarget > 0) then {_cursorObject = (_cursorTarget select 0) sele
           //icon
           private _icon = if ([_x] call zade_spectator_fnc_isMedic) then {"iconManMedic"} else {"iconMan"};
           if (leader (group _x) isEqualTo _x) then {_icon = "iconManLeader";};
-          if ([_x] call zade_spectator_fnc_isUnconscious) then {_icon = "\a3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa";};
+          if ([_x] call zade_spectator_fnc_isUnconscious) then {_icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";};
 
           //color
           private _color = [(side _x)] call BIS_fnc_sideColor;
