@@ -33,8 +33,7 @@ zade_spectator_treeUnits = [];
 tvClear _tree;
 
 if !(_side in (missionNamespace getVariable ["zade_spectator_allowedSides",[west,east,resistance,civilian]])) exitWith {
-     _tree tvAdd [[],"You are not allowed"];
-     _tree tvAdd [[],"to spectate this side"];
+     ["You are not allowed to specate this side.",[1,0.55,0,1]] call zade_spectator_fnc_hint;
 };
 
 {
