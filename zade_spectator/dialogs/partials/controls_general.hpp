@@ -21,6 +21,6 @@ class general: zade_spectator_RscListNBox
      x = 0;
      y = 5.5 * GRID_H;
      w = (CONTROLS_W - 5.5) * GRID_W;
-     h = 5.5 * 9.5 * GRID_H;
+     h = 5.5 * 20.5 * GRID_H;
      columns[]={0,0.5};
 };
