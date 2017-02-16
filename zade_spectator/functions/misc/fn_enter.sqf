@@ -3,14 +3,14 @@
  * Switches local player into spectator mode. Inializes all variables, the display etc.
  *
  * Arguments:
- * 0: Target <OBJECT> or <POSITION> (Optional)
+ * 0: Target <OBJECT>
  * 1: Camera mode <STRING> either "FREECAM", "INTERNAL" or "EXTERNAL" (OPTIONAL)
  *
  * Return Value:
- * NONE
+ * Spectator Unit <OBJECT>
  *
  * Example:
- * [hans,"INTERNAL"] call zade_spectator_fnc_enter;
+ * _spectatorUnit = [hans,"INTERNAL"] call zade_spectator_fnc_enter;
  *
  * Public: No
  */
@@ -24,7 +24,7 @@ zade_spectator_3dMarker = true;
 
 //switch player into curator-unit
 _spectator = (createGroup sideLogic) createUnit ["VirtualCurator_F", Position player, [], 0, "FORM"];
-_spectaor setVariable ["zade_spectator_oldPlayer", player];
+_spectator setVariable ["zade_spectator_oldPlayer", player, true];
 removeAllAssignedItems _spectator;
 _spectator enableSimulationGlobal false;
 selectPlayer _spectator;
@@ -54,8 +54,11 @@ if ("task_force_radio" in activatedAddons) then {
 //draw 3D Icons
 ["zade_spectator_3dIcons","onEachFrame",zade_spectator_fnc_onDraw3D] call BIS_fnc_addStackedEventHandler;
 
-addMissionEventHandler ["HandleDisconnect",{call zade_spectator_fnc_loadUnitsTree}];
-addMissionEventHandler ["Ended",{zade_spectator_camera cameraEffect ["Terminate", "back"]; (uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;}];
+private _i1 = addMissionEventHandler ["HandleDisconnect",{call zade_spectator_fnc_loadUnitsTree}];
+private _i2 = addMissionEventHandler ["Ended",{zade_spectator_camera cameraEffect ["Terminate", "back"]; (uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;}];
+_spectator setVariable ["zade_spectator_missionEHs",[_i1,_i2], true];
 
-zade_specator_spectators pushBack player;
+zade_specator_spectators pushBack _spectator;
 publicVariable "zade_specator_spectators";
+
+_spectator

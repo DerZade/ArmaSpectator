@@ -15,26 +15,42 @@
  */
 
 params [["_unit",(player getVariable "zade_spectator_oldPlayer")]];
-
-closeDialog 0;
-
+private _spectator = player;
 //reset cam mode
 switch (zade_spectator_camMode) do {
      case ("INTERNAL"): {
-          player switchCamera "INTERNAL";
-          detach player;
+          _spectator switchCamera "INTERNAL";
      };
      case ("EXTERNAL"): {
           ["zade_spectator_updateExternalCam","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
           zade_spectator_camera cameraEffect ["Terminate", "back"];
-          detach player;
      };
      case ("FREECAM"): {
           zade_spectator_camera cameraEffect ["Terminate", "back"];
-          detach player;
      };
 };
 
+//close display
+(uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;
+uiNamespace setVariable ['zade_spectator_main',nil];
+
+//remove stacked EH for 3D-Markers
+["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+
+removeMissionEventHandler ["HandleDisconnect", (_spectator getVariable "zade_spectator_missionEHs") select 0];
+removeMissionEventHandler ["Ended", (_spectator getVariable "zade_spectator_missionEHs") select 1];
+
+//remove from spectators list
+zade_specator_spectators deleteAt (zade_specator_spectators find _spectator);
+publicVariable "zade_specator_spectators";
+
+
 //switch to new unit
+showHUD [true,true,true,true,true,true,true,true,false,false];
 selectPlayer _unit;
 _unit switchCamera "INTERNAL";
+deleteVehicle _spectator;
+
+if ("task_force_radio" in activatedAddons) then {
+     [_unit, false] call TFAR_fnc_forceSpectator;
+};
