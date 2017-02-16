@@ -172,6 +172,8 @@ switch (true) do {
           if (ctrlShown (_dialog displayCtrl IDC_MAP)) then {
                //hide map
                (_dialog displayCtrl IDC_MAP) ctrlShow false;
+
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual on";};
           } else {
                //center map on camera
                (_dialog displayCtrl IDC_MAP_MAP) ctrlMapAnimAdd [0, 0.05, (call zade_spectator_fnc_camera)];
@@ -179,6 +181,8 @@ switch (true) do {
 
                //show map
                (_dialog displayCtrl IDC_MAP) ctrlShow true;
+
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual off";};
           };
           true;
      };

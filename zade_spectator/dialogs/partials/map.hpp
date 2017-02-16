@@ -38,4 +38,5 @@ class map: zade_spectator_RscMap
 	h = (MAP_H - 5.5) * GRID_H;
 	onDraw = "_this call zade_spectator_fnc_onDraw2D;";
 	onMouseButtonClick = "_this call zade_spectator_fnc_mapClick;";
+	onMouseButtonDblClick = "_this call zade_spectator_fnc_mapDblClick;";
 };

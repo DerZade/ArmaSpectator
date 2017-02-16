@@ -35,6 +35,7 @@ class zade_spectator {
 		class keyUp_search {};
 		class loadUnitsTree {};
 		class mapClick {};
+		class mapDblClick {};
 		class onDraw2D {};
 		class onKeyDown {};
 		class onKeyUp {};
