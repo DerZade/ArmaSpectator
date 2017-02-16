@@ -1,7 +1,7 @@
 class zade_spectator_hint
 {
 	idd = -1;
-	duration = 6;
+	duration = 4;
 	fadein = 0.2;
 	fadeout = 2;
      onLoad = "uiNamespace setVariable ['zade_spectator_hint',_this select 0];";
