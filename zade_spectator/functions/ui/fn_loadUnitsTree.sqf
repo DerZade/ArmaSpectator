@@ -74,7 +74,7 @@ if !(_side in (missionNamespace getVariable ["zade_spectator_allowedSides",[west
 
           //add dead units
           if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
-               private _index = [zade_spectator_dead,_grp] call zade_spectator_fnc_findInPairs;
+               private _index = [zade_spectator_deadUnits,_grp] call zade_spectator_fnc_findInPairs;
                if !(_index isEqualTo -1) then {
                     {
                          private _unitPath = _tree tvAdd [[_grpPath],(_x getVariable "zade_spectator_name")];
@@ -88,7 +88,7 @@ if !(_side in (missionNamespace getVariable ["zade_spectator_allowedSides",[west
                          //add the corresponding unit
                          _tree tvSetValue [[_grpPath,_unitPath],count zade_spectator_treeUnits];
                          zade_spectator_treeUnits pushBack _x;
-                    } forEach (zade_spectator_dead select _index select 1);
+                    } forEach (zade_spectator_deadUnits select _index select 1);
                };
           };
 
@@ -129,7 +129,7 @@ if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
                _tree tvExpand [_grpPath];
 
           };
-     } forEach (zade_spectator_dead);
+     } forEach (zade_spectator_deadUnits);
 };
 
 //select the target
@@ -139,5 +139,5 @@ _tree tvsetData [_targetPath,str ACTIVECOLOR_SCRIPT];
 _tree tvsetColor [_targetPath,ACTIVECOLOR_SCRIPT];
 
 if !(ctrlText (_dialog displayCtrl IDC_LEFT_EDIT) isEqualTo "") then {
-     [(_dialog displayCtrl IDC_LEFT_EDIT)] call zade_spectator_fnc_keyUp_search;
+     [(_dialog displayCtrl IDC_LEFT_EDIT)] call zade_spectator_fnc_search_onKeyUp;
 };

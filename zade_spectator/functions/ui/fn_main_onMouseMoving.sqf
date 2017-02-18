@@ -12,7 +12,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_onMouseButtonDown;
+ * _this call zade_spectator_fnc_main_onMouseButtonDown;
  *
  * Public: No
  */

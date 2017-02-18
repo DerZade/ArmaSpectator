@@ -76,7 +76,7 @@ class content: zade_spectator_RscControlsGroup
 		{
 		     idc = IDC_CONTROLS_GENERAL_BTN;
 		     style = 0x02 + 0x30 + 0x800;
-		     onButtonClick = "_this call zade_spectator_fnc_btnClick_expandControls;";
+		     onButtonClick = "_this call zade_spectator_fnc_expandControls_onButtonClick;";
 			text = "A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
 			x = 3.25 * GRID_W;
 			y = 11.5 * GRID_H;

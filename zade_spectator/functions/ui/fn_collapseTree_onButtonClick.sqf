@@ -9,7 +9,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_btnClick_collapse;
+ * _this call zade_spectator_fnc_collapseTree_onButtonClick;
  *
  * Public: No
  */

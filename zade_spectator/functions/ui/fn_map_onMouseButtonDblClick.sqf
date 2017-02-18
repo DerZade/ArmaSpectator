@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_mapClick;
+ * _this call zade_spectator_fnc_map_onMouseButtonClick;
  *
  * Public: No
  */
@@ -36,7 +36,7 @@ switch (_btn) do {
                     {
                          if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
                     } forEach (_x select 1);
-               } forEach zade_spectator_dead;
+               } forEach zade_spectator_deadUnits;
           };
 
           if !(_cursorTarget isEqualTo objNull) exitWith {

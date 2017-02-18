@@ -34,7 +34,7 @@ private _dialog = ctrlParent _ctrl;
                {
                     if ((getPos _x) distance2D _mousePos < _distance) then {_cursorTarget = _x};
                } forEach (_x select 1);
-          } forEach zade_spectator_dead;
+          } forEach zade_spectator_deadUnits;
      };
      //custom icons
      {
@@ -98,7 +98,7 @@ private _dialog = ctrlParent _ctrl;
 
                } forEach (_group select 1);
           };
-          } forEach zade_spectator_dead;
+          } forEach zade_spectator_deadUnits;
      };
 
      //custom icons

@@ -16,7 +16,7 @@ class title: titlebackground
 class general: zade_spectator_RscListNBox
 {
      idc = IDC_CONTROLS_GENERAL_LIST;
-     onLoad = "(_this select 0) ctrlEnable false;[_this select 0,'general'] call zade_spectator_fnc_onLoad_controlsList;";
+     onLoad = "(_this select 0) ctrlEnable false;[_this select 0,'general'] call zade_spectator_fnc_controlsList_onLoad;";
      colorBackground[] = {0,0,0,0.2};
      x = 0;
      y = 5.5 * GRID_H;

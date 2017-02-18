@@ -36,7 +36,7 @@ class toolbox: zade_spectator_RscToolbox
 class freecam: zade_spectator_RscListNBox
 {
      idc = IDC_CONTROLS_FREECAM_LIST;
-     onLoad = "[_this select 0,'camera_freecam'] call zade_spectator_fnc_onLoad_controlsList;";
+     onLoad = "[_this select 0,'camera_freecam'] call zade_spectator_fnc_controlsList_onLoad;";
      colorBackground[] = {0,0,0,0.2};
      x = 0;
      y = 11 * GRID_H;
@@ -47,10 +47,10 @@ class freecam: zade_spectator_RscListNBox
 class external: freecam
 {
      idc = IDC_CONTROLS_EXTERNAL_LIST;
-     onLoad = "[_this select 0,'camera_external'] call zade_spectator_fnc_onLoad_controlsList;";
+     onLoad = "[_this select 0,'camera_external'] call zade_spectator_fnc_controlsList_onLoad;";
 };
 class internal: freecam
 {
      idc = IDC_CONTROLS_INTERNAL_LIST;
-     onLoad = "[_this select 0,'camera_internal'] call zade_spectator_fnc_onLoad_controlsList;";
+     onLoad = "[_this select 0,'camera_internal'] call zade_spectator_fnc_controlsList_onLoad;";
 };

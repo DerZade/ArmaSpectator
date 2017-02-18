@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_mapClick;
+ * _this call zade_spectator_fnc_map_onMouseButtonClick;
  *
  * Public: No
  */

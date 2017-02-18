@@ -2,10 +2,10 @@ class zade_spectator_main
 {
 	idd = -1;
 	movingEnable = false;
-	onLoad = "_this call zade_spectator_fnc_onLoad_main";
+	onLoad = "_this call zade_spectator_fnc_main_onLoad";
 	onUnLoad = "uiNamespace setVariable ['zade_spectator_main',nil];";
-	onKeyDown = "_this call zade_spectator_fnc_onKeyDown;";
-	onKeyUp = "_this call zade_spectator_fnc_onKeyUp;";
+	onKeyDown = "_this call zade_spectator_fnc_main_onKeyDown;";
+	onKeyUp = "_this call zade_spectator_fnc_main_onKeyUp;";
 	class ControlsBackground
 	{
 		class mouseHandler: zade_spectator_RscStructuredText
@@ -17,9 +17,9 @@ class zade_spectator_main
 			h="safeZoneH";
 			colorBackground[]={1,1,1,0};
 			style=16;
-			onMouseButtonDown = "_this call zade_spectator_fnc_onMouseButtonDown;";
-			onMouseButtonDblClick = "_this call zade_spectator_fnc_onMouseButtonDblClick;";
-			onMouseZChanged = "_this call zade_spectator_fnc_onMouseZChanged;";
+			onMouseButtonDown = "_this call zade_spectator_fnc_main_onMouseButtonDown;";
+			onMouseButtonDblClick = "_this call zade_spectator_fnc_main_onMouseButtonDblClick;";
+			onMouseZChanged = "_this call zade_spectator_fnc_main_onMouseZChanged;";
 		};
 	};
 	class Controls {

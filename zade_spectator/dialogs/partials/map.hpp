@@ -36,7 +36,7 @@ class map: zade_spectator_RscMap
 	y = safezoneH / 2 - (MAP_H * GRID_H) / 2 + safezoneY + 5.5 * GRID_H;
 	w = MAP_W * GRID_W;
 	h = (MAP_H - 5.5) * GRID_H;
-	onDraw = "_this call zade_spectator_fnc_onDraw2D;";
-	onMouseButtonClick = "_this call zade_spectator_fnc_mapClick;";
-	onMouseButtonDblClick = "_this call zade_spectator_fnc_mapDblClick;";
+	onDraw = "_this call zade_spectator_fnc_map_onDraw;";
+	onMouseButtonClick = "_this call zade_spectator_fnc_map_onMouseButtonClick;";
+	onMouseButtonDblClick = "_this call zade_spectator_fnc_map_onMouseButtonDblClick;";
 };

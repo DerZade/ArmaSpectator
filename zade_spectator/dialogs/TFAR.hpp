@@ -4,7 +4,7 @@ class zade_spectator_TFAR
 	duration = 2;
 	fadein = 0.2;
 	fadeout = 2;
-	onLoad = "_this call zade_spectator_fnc_TFARonLoad";
+	onLoad = "_this call zade_spectator_fnc_TFAR_onLoad";
 	class ControlsBackground
 	{
 		class spectatorChannel : zade_spectator_RscPicture

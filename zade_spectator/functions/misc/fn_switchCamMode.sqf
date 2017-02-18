@@ -38,9 +38,8 @@ switch (zade_spectator_camMode) do {
 };
 
 //update dialog if it's open
-private _dialog = uiNamespace getVariable 'zade_spectator_main';
-if !(isNil "_dialog") then {
-     (_dialog displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel (["FREECAM","INTERNAL","EXTERNAL"] find _camMode);
+if !(isNull (uiNamespace getVariable ['zade_spectator_main',displayNull])) then {
+     ((uiNamespace getVariable 'zade_spectator_main') displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel (["FREECAM","INTERNAL","EXTERNAL"] find _camMode);
 };
 
 switch (_camMode) do {

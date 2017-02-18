@@ -81,7 +81,7 @@ if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
                     };
                } forEach (_group select 1);
           };
-     } forEach zade_spectator_dead;
+     } forEach zade_spectator_deadUnits;
 };
 
 //draw unit under cursor

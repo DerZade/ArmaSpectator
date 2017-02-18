@@ -22,6 +22,6 @@ params ["_unit"];
      {
           if (_unit == _x) exitWith {_curside};
      } forEach _units;
-} forEach zade_spectator_dead;
+} forEach zade_spectator_deadUnits;
 
 sideUnknown

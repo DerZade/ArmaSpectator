@@ -26,7 +26,7 @@ class searchEdit : zade_spectator_RscEdit
      y = 14 * GRID_H;
      w = (LEFTPANEL_W - 5 - 5.5 * 3) * GRID_W;
      h = 5.5 * GRID_H;
-     onKeyUp = "_this call zade_spectator_fnc_keyUp_search;";
+     onKeyUp = "_this call zade_spectator_fnc_search_onKeyUp;";
      onSetFocus = "zade_spectator_editFocused = true;";
      onKillFocus = "zade_spectator_editFocused = false;";
 };
@@ -39,20 +39,20 @@ class searchButton : zade_spectator_RscButton
      w = 5.5 * GRID_W;
      h = 5.5 * GRID_H;
      text = "\a3\3den\data\displays\display3den\search_start_ca.paa";
-     onButtonClick = "_this call zade_spectator_fnc_btnClick_search;";
+     onButtonClick = "_this call zade_spectator_fnc_search_onButtonClick;";
 };
 class collapse : searchButton
 {
      x = (LEFTPANEL_W - 2 - 5.5 * 2) * GRID_W;
      colorBackground[] = {0,0,0,0};
      text = "\a3\3den\data\displays\display3den\tree_collapse_ca.paa";
-     onButtonClick = "_this call zade_spectator_fnc_btnClick_collapse;";
+     onButtonClick = "_this call zade_spectator_fnc_collapseTree_onButtonClick;";
 };
 class expand : collapse
 {
      x = (LEFTPANEL_W - 2 - 5.5 * 1) * GRID_W;
      text = "\a3\3den\data\displays\display3den\tree_expand_ca.paa";
-     onButtonClick = "_this call zade_spectator_fnc_btnClick_expand;";
+     onButtonClick = "_this call zade_spectator_fnc_expandTree_onButtonClick;";
 };
 class tree: zade_spectator_RscTree
 {

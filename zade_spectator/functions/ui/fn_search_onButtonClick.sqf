@@ -9,7 +9,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_btnClick_search;
+ * _this call zade_spectator_fnc_search_onButtonClick;
  *
  * Public: No
  */
@@ -22,6 +22,6 @@ if (ctrlText _edit isEqualTo "") then {
      ctrlSetFocus _edit;
 } else {
      _edit ctrlSetText "";
-     [_edit] call zade_spectator_fnc_keyUp_search;
+     [_edit] call zade_spectator_fnc_search_onKeyUp;
      ctrlSetFocus ((ctrlParent _ctrl) displayCtrl IDC_FOCUSBUTTON);
 };

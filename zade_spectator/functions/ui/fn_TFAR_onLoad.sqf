@@ -9,7 +9,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_TFARonLoad;
+ * _this call zade_spectator_fnc_TFAR_onLoad;
  *
  * Public: No
  */

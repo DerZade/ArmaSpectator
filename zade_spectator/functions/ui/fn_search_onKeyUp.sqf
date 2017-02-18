@@ -9,7 +9,7 @@
  * NONE
  *
  * Example:
- * _this call zade_spectator_fnc_KeyUp_search;
+ * _this call zade_spectator_fnc_search_onKeyUp;
  *
  * Public: No
  */
@@ -25,7 +25,7 @@ private _treeResults = _dialog displayCtrl IDC_LEFT_RESULTS;
 
 if (_key in [28,1]) exitWith {
      _ctrl ctrlSetText "";
-     [_ctrl] call zade_spectator_fnc_keyUp_search;
+     [_ctrl] call zade_spectator_fnc_search_onKeyUp;
      ctrlSetFocus ((ctrlParent _ctrl) displayCtrl IDC_FOCUSBUTTON);
      true;
 };
