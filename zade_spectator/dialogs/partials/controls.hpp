@@ -10,7 +10,7 @@ class title: zade_spectator_RscText
 class close: zade_spectator_RscButton
 {
 	style = 0x02 + 0x30 + 0x800;
-	onButtonClick = "(ctrlParentControlsGroup (_this select 0)) ctrlShow false;";
+	onButtonClick = "(ctrlParentControlsGroup (_this select 0)) ctrlShow false; if (zade_spectator_camMode isEqualTo 'FREECAM') then {(call zade_spectator_fnc_camera) camCommand 'manual on';};";
 	text = "\a3\3den\data\displays\display3den\search_end_ca.paa";
 	x = (CONTROLS_W - 5.5) * GRID_W;
 	y = 0;

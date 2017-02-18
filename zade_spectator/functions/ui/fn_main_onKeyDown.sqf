@@ -113,10 +113,14 @@ switch (true) do {
      };
      case (_key in [1]): { //ESC
           if (ctrlShown (_dialog displayCtrl IDC_MAP)) exitWith {
-               (_dialog displayCtrl IDC_MAP) ctrlShow false; true;
+               (_dialog displayCtrl IDC_MAP) ctrlShow false;
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual on";};
+               true;
           };
           if (ctrlShown (_dialog displayCtrl IDC_CONTROLS)) exitWith {
-               (_dialog displayCtrl IDC_CONTROLS) ctrlShow false; true;
+               (_dialog displayCtrl IDC_CONTROLS) ctrlShow false;
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual on";};
+               true;
           };
 
           private _displayType = if (isMultiplayer) then { "RscDisplayMPInterrupt" } else { "RscDisplayInterrupt" };
@@ -132,9 +136,11 @@ switch (true) do {
           if (ctrlShown (_dialog displayCtrl IDC_CONTROLS)) then {
                //hide controls
                (_dialog displayCtrl IDC_CONTROLS) ctrlShow false;
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual on";};
           } else {
                //show controls
                (_dialog displayCtrl IDC_CONTROLS) ctrlShow true;
+               if (zade_spectator_camMode isEqualTo "FREECAM") then {(call zade_spectator_fnc_camera) camCommand "manual off";};
                {(_dialog displayCtrl _x) ctrlShow false;} forEach [IDC_CONTROLS_FREECAM_LIST,IDC_CONTROLS_EXTERNAL_LIST,IDC_CONTROLS_INTERNAL_LIST];
                (_dialog displayCtrl (IDC_CONTROLS_FREECAM_LIST+(lbCurSel (_dialog displayCtrl IDC_CONTROLS_TOOLBOX)))) ctrlShow true;
           };
