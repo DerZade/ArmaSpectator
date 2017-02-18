@@ -14,7 +14,7 @@
  * Public: No
  */
 #include "..\..\idcmacros.hpp"
-params ["_ctrl","_key"];
+params ["_ctrl",["_key",-1]];
 
 private _dialog = ctrlParent _ctrl;
 private _searchKey = toLower (ctrlText _ctrl);
@@ -25,12 +25,12 @@ private _treeResults = _dialog displayCtrl IDC_LEFT_RESULTS;
 
 if (_key in [28,1]) exitWith {
      _ctrl ctrlSetText "";
-     [_ctrl] call zade_spectator_fnc_search_onKeyUp;
      ctrlSetFocus ((ctrlParent _ctrl) displayCtrl IDC_FOCUSBUTTON);
-     true;
-};
+     _btn ctrlSetText "\a3\3den\data\displays\display3den\search_start_ca.paa";
 
-if (_tree tvText [0] isEqualTo "You are not allowed") exitWith {};
+     _treeResults ctrlShow false;
+     _tree ctrlShow true;
+};
 
 //show panel
 if !(ctrlFade (_dialog displayCtrl IDC_LEFTPANEL) isEqualTo 0) then {
