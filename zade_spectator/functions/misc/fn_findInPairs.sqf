@@ -1,6 +1,6 @@
 /*
  * Author: Derzade
- * Find in pairs (The BIS_fnc_findInPairs only works with Stings)
+ * Find in pairs (BIS_fnc_findInPairs only works with Stings)
  *
  * Arguments:
  * 0: Array to search in <ARRAY>
