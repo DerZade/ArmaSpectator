@@ -1,6 +1,6 @@
 /*
  * Author: Derzade
- * Return all spectetable units depending on which sides the spectator is allowed to spectate 
+ * Return all spectetable units depending on which sides the spectator is allowed to spectate
  *
  * Arguments:
  * 0: Side <SIDE> (Optional)
@@ -19,7 +19,7 @@ private _units = [];
 
 {
      //unit has to be in a allowed side
-     if ((side _x) in (missionNamespace getVariable ["zade_spectator_allowedSides",[west,east,resistance,civilian]])) then {
+     if (["side",side _x] call zade_spectator_fnc_getRestrictions) then {
           if (alive _x) then { //unit has to be alive
                if ((_side isEqualTo sideUnknown) or (_side isEqualTo (side _x))) then {_units pushBack _x};
           };

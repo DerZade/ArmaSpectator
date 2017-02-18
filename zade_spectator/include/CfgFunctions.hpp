@@ -16,10 +16,12 @@ class zade_spectator {
 		class enter {};
 		class exit {};
 		class findInPairs {};
-		class hint {};	
+		class getRestrictions {};
+		class hint {};
 		class isMedic {};
 		class isUnconscious {};
 		class onDraw3D {};
+		class setRestrictions {};
 		class splitString {};
 		class switchCamMode {};
 		class switchTarget {};

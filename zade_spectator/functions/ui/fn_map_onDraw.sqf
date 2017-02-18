@@ -75,7 +75,7 @@ private _dialog = ctrlParent _ctrl;
      if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX) and _mapScale < 0.5) then {
      {
           private _group = _x;
-          if ((side (_group select 0)) in (missionNamespace getVariable ["zade_spectator_allowedSides",[west,east,resistance,civilian]])) then {
+          if (["side",side (_group select 0)] call zade_spectator_fnc_getRestrictions) then {
                {
                //icon
                     //color

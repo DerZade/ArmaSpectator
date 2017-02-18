@@ -63,7 +63,7 @@ if (cbChecked (_dialog displayCtrl IDC_LEFT_CHECKBOX)) then {
           private _group = _x;
 
           //draw onloy if side of group is allowed
-          if (side (_group select 0) in (missionNamespace getVariable ["zade_spectator_allowedSides",[west,east,resistance,civilian]])) then {
+          if (["side",side (_group select 0)] call zade_spectator_fnc_getRestrictions) then {
                {
                     private _distance = _x distance (call zade_spectator_fnc_camera);
 
