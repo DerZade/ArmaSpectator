@@ -16,6 +16,7 @@ class zade_spectator {
 		class enter {};
 		class exit {};
 		class findInPairs {};
+		class hint {};	
 		class isMedic {};
 		class isUnconscious {};
 		class onDraw3D {};
@@ -31,7 +32,6 @@ class zade_spectator {
 		class controlsList_onLoad {};
 		class expandControls_onButtonClick {};
 		class expandTree_onButtonClick {};
-		class hint {};
 		class loadUnitsTree {};
 		class main_onKeyDown {};
 		class main_onKeyUp {};
