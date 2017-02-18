@@ -46,48 +46,45 @@ private _generalPos = +(ctrlPosition _generalGrp);
 switch (format ["%1_%2",_ctrlGrp,_expand]) do {
     case ("camera_expand"): {
          _cameraPos set [3, CAMERA_EXPANDED];
-         _cameraGrp ctrlSetPosition _cameraPos;
-         _cameraGrp ctrlCommit 0.15;
+         _cameraGrp ctrlEnable true;
     };
     case ("camera_collapse"):{
          _cameraPos set [3, GROUP_COLLAPSED];
-         _cameraGrp ctrlSetPosition _cameraPos;
-         _cameraGrp ctrlCommit 0.15;
+         _cameraGrp ctrlEnable false;
     };
      case ("general_expand"): {
           _generalPos set [3, GENERAL_EXPANDED];
-          _generalGrp ctrlSetPosition _generalPos;
-          _generalGrp ctrlCommit 0.15;
 
           _cameraPos set [1, (_generalPos select 1) + (_generalPos select 3)+ GROUP_COLLAPSED * 0.5];
-          _cameraGrp ctrlSetPosition _cameraPos;
-          _cameraGrp ctrlCommit 0.15;
      };
      case ("general_collapse"):{
           _generalPos set [3, GROUP_COLLAPSED];
-          _generalGrp ctrlSetPosition _generalPos;
-          _generalGrp ctrlCommit 0.15;
 
           _cameraPos set [1, (_generalPos select 1) + (_generalPos select 3)+ GROUP_COLLAPSED * 0.5];
-          _cameraGrp ctrlSetPosition _cameraPos;
-          _cameraGrp ctrlCommit 0.15;
      };
 };
 
-//update buttons
-_cameraBtn ctrlSetPosition [(_cameraPos select 0) + 0.5*GRID_W, (_cameraPos select 1) + 0.5*GRID_H];
-_cameraBtn ctrlCommit 0.15;
+//commit controls groups
+     _cameraGrp ctrlSetPosition _cameraPos;
+     _cameraGrp ctrlCommit 0.15;
 
-_generalBtn ctrlSetPosition [(_generalPos select 0) + 0.5*GRID_W, (_generalPos select 1) + 0.5*GRID_H];
-_generalBtn ctrlCommit 0.15;
+     _generalGrp ctrlSetPosition _generalPos;
+     _generalGrp ctrlCommit 0.15;
+
+//update buttons
+     _cameraBtn ctrlSetPosition [(_cameraPos select 0) + 0.5*GRID_W, (_cameraPos select 1) + 0.5*GRID_H];
+     _cameraBtn ctrlCommit 0.15;
+
+     _generalBtn ctrlSetPosition [(_generalPos select 0) + 0.5*GRID_W, (_generalPos select 1) + 0.5*GRID_H];
+     _generalBtn ctrlCommit 0.15;
 
 //adjust background height
-private _backgroundPos = +(ctrlPosition ((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND));
-_backgroundPos set [3, ((_cameraPos select 1) + (_cameraPos select 3) + GROUP_COLLAPSED * 0.5)]; //camera y + camera h + little bit of space
+     private _backgroundPos = +(ctrlPosition ((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND));
+     _backgroundPos set [3, ((_cameraPos select 1) + (_cameraPos select 3) + GROUP_COLLAPSED * 0.5)]; //camera y + camera h + little bit of space
 
-//make sure the backgorund doesn't get smaller then the content group
-if (_backgroundPos select 3 < (ctrlPosition (ctrlParentControlsGroup _cameraGrp)) select 3) then {
-     _backgroundPos set [3, (ctrlPosition (ctrlParentControlsGroup _cameraGrp)) select 3];
-};
-((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND) ctrlSetPosition _backgroundPos;
-((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND) ctrlCommit 0.15;
+     //make sure the backgorund doesn't get smaller then the content group
+     if (_backgroundPos select 3 < (ctrlPosition (ctrlParentControlsGroup _cameraGrp)) select 3) then {
+          _backgroundPos set [3, (ctrlPosition (ctrlParentControlsGroup _cameraGrp)) select 3];
+     };
+     ((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND) ctrlSetPosition _backgroundPos;
+     ((ctrlParentControlsGroup _cameraGrp) controlsGroupCtrl IDC_CONTROLS_BACKGROUND) ctrlCommit 0.15;

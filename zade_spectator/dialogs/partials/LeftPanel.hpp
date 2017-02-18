@@ -5,7 +5,7 @@ class background : zade_spectator_RscText
      w = LEFTPANEL_W * GRID_W;
      h = 1 * safezoneH;
      colorBackground[] = {0,0,0,0.5};
-     onLoad = "_this spawn {(_this select 0) ctrlShow false; sleep 0.02; (_this select 0) ctrlShow true;};"; //fixes a background-not-shown issue
+     onLoad = "_this spawn {sleep 0.02; (_this select 0) ctrlShow true;};"; //fixes a background-not-shown issue
 };
 class side: zade_spectator_RscToolbox
 {

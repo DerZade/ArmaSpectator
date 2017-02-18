@@ -27,12 +27,6 @@ switch (zade_spectator_camMode) do {
           if !(vehicle zade_spectator_target isEqualTo zade_spectator_target) then {
                zade_spectator_camera camSetTarget (vehicle zade_spectator_target);
           };
-/*
-          private _pos = [zade_spectator_target, 7,(direction zade_spectator_target -180)] call BIS_fnc_relPos;
-          _pos set [2,3];
-          private _vec = _pos vectorDiff (getPos zade_spectator_target);
-          zade_spectator_vector = [_vec,direction zade_spectator_target] call BIS_fnc_rotateVector2D;
-*/
      };
      case ("FREECAM"): {
           private _pos = [zade_spectator_target, 7,(direction zade_spectator_target -180)] call BIS_fnc_relPos;
