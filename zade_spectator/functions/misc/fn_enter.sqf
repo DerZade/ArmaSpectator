@@ -52,7 +52,11 @@ if ("task_force_radio" in activatedAddons) then {
 };
 
 //draw 3D Icons
-["zade_spectator_3dIcons","onEachFrame",zade_spectator_fnc_onDraw3D] call BIS_fnc_addStackedEventHandler;
+if (["3dmarker"] call zade_spectator_fnc_getRestrictions) then {
+     ["zade_spectator_3dIcons","onEachFrame",zade_spectator_fnc_onDraw3D] call BIS_fnc_addStackedEventHandler;
+} else {
+     zade_spectator_3dMarker = false;
+};
 
 private _i1 = addMissionEventHandler ["HandleDisconnect",{call zade_spectator_fnc_loadUnitsTree}];
 private _i2 = addMissionEventHandler ["Ended",{zade_spectator_camera cameraEffect ["Terminate", "back"]; (uiNamespace getVariable 'zade_spectator_main') closeDisplay 1;}];

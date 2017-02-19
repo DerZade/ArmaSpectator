@@ -207,6 +207,8 @@ switch (true) do {
           true;
      };
      case (_key in [48]): {  //B - Toggle 3D-Marker
+          if !(["3dmarker"] call zade_spectator_fnc_getRestrictions) exitWith {["3D-Markers are disabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;};
+
           if (zade_spectator_3dMarker) then {
                ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
           } else {

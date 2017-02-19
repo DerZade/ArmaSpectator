@@ -92,6 +92,15 @@ switch (tolower _type) do {
     };
     case ("3dmarker"): {
          _restrictions set [2,(_params select 0)];
+
+         if (_params select 0) then {
+             if !(zade_spectator_3dMarker) then {["3D-Markers enabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;};
+         } else {
+              ["3D-Markers are disabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;
+              if (zade_spectator_3dMarker) then {
+                   ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+              };
+         };
     };
 };
 
