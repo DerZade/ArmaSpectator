@@ -101,7 +101,9 @@ zade_spectatator_restrictions = _restrictions;
 //FORCE RESTRICTIONS
 switch (tolower _type) do {
     case ("side"): {
-
+         if !(["side",(side zade_spectator_target)] call zade_spectator_fnc_getRestrictions) then {
+             [([] call zade_spectator_fnc_allUnits) select 0] call zade_spectator_fnc_switchTarget;
+         };
     };
     case ("cammode"): {
          if !(["cammode",zade_spectator_cammode] call zade_spectator_fnc_getRestrictions) then {
