@@ -53,16 +53,24 @@ switch (true) do {
                (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade 1;
                (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0.2;
                _null = [(_dialog displayCtrl IDC_LEFTPANEL)] spawn {disableSerialization; sleep 0.2; (_this select 0) ctrlShow false;};
+
+               //hide hint if open
+               private _hintDisplay = uiNamespace getVariable ['zade_spectator_hint',nil];
+               if !(isNil "_hintDisplay") then {
+                    (_hintDisplay displayCtrl IDC_HINT_TEXT) ctrlSetFade 1;
+                    (_hintDisplay displayCtrl IDC_HINT_TEXT) ctrlCommit 0.2;
+               };
           } else {
                //show panel
                (_dialog displayCtrl IDC_LEFTPANEL) ctrlShow true;
                (_dialog displayCtrl IDC_LEFTPANEL) ctrlSetFade (ctrlFade (_dialog displayCtrl IDC_FAKEPANEL)); //apply same fade
                (_dialog displayCtrl IDC_LEFTPANEL) ctrlCommit 0.2;
 
-               //show hint if there is one currently open
-               private _display = uiNamespace getVariable ['zade_spectator_hint',nil];
-               if (!isNil "_display") then {
-                    (_display displayCtrl IDC_LEFTPANEL) ctrlSetFade 0;
+               //show hint if open
+               private _hintDisplay = uiNamespace getVariable ['zade_spectator_hint',nil];
+               if !(isNil "_hintDisplay") then {
+                    (_hintDisplay displayCtrl IDC_HINT_TEXT) ctrlSetFade 0;
+                    (_hintDisplay displayCtrl IDC_HINT_TEXT) ctrlCommit 0.2;
                };
 
                //hide search results

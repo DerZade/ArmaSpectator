@@ -10,6 +10,7 @@ private _disp = uiNamespace getVariable ['zade_spectator_hint',displayNull];
 (_disp displayCtrl IDC_HINT_TEXT) ctrlSetTextColor _color;
 
 //hide hint if ui is hidden
-if (ctrlShown ((uiNamespace getVariable 'zade_spectator_main') displayCtrl IDC_LEFTPANEL)) then {
+if !(ctrlShown ((uiNamespace getVariable 'zade_spectator_main') displayCtrl IDC_LEFTPANEL)) then {
      (_disp displayCtrl IDC_HINT_TEXT) ctrlSetFade 1;
+     (_disp displayCtrl IDC_HINT_TEXT) ctrlCommit 0;
 }
