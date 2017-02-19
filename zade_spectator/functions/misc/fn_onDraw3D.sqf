@@ -31,7 +31,7 @@ if (count _cursorTarget > 0) then {_cursorObject = (_cursorTarget select 0) sele
           private _icon = if ([_x] call zade_spectator_fnc_isMedic) then {"iconManMedic"} else {"iconMan"};
           if (leader (group _x) isEqualTo _x) then {_icon = "iconManLeader";};
           if ([_x] call zade_spectator_fnc_isUnconscious) then {_icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";};
-
+          if (_distance > 300) then {_icon = "P:\a3\ui_f\data\map\markers\military\dot_ca.paa";};
           //color
           private _color = [(side _x)] call BIS_fnc_sideColor;
           private _alpha = if (_distance > 1500) then {(2000 - _distance) / 500} else {1};
