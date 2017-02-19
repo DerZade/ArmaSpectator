@@ -30,6 +30,7 @@ class zade_spectator {
 	class ui
 	{
 		file = "zade_spectator\functions\ui";
+		class camMode_onToolboxSelChanged {};
 		class collapseTree_onButtonClick {};
 		class controlsList_onLoad {};
 		class expandControls_onButtonClick {};

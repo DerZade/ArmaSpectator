@@ -31,7 +31,7 @@
 
 params ["_type","_params"];
 
-private _restrictions = +(missionNamespace getVariable ["zade_spectatator_spectator",[[east,west,resistance,civilian],["FREECAM","EXTERNAL","INTERNAL"],true]]);
+private _restrictions = +(missionNamespace getVariable ["zade_spectatator_restrictions",[[east,west,resistance,civilian],["FREECAM","EXTERNAL","INTERNAL"],true]]);
 
 switch (tolower _type) do {
     case ("side"): {
@@ -92,17 +92,29 @@ switch (tolower _type) do {
     };
     case ("3dmarker"): {
          _restrictions set [2,(_params select 0)];
-
-         if (_params select 0) then {
-             if !(zade_spectator_3dMarker) then {["3D-Markers enabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;};
-         } else {
-              ["3D-Markers are disabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;
-              if (zade_spectator_3dMarker) then {
-                   ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
-              };
-              zade_spectator_3dMarker = false;
-         };
     };
 };
 
-zade_spectatator_spectator = _restrictions;
+zade_spectatator_restrictions = _restrictions;
+
+
+//FORCE RESTRICTIONS
+switch (tolower _type) do {
+    case ("side"): {
+
+    };
+    case ("cammode"): {
+         if !(["cammode",zade_spectator_cammode] call zade_spectator_fnc_getRestrictions) then {
+              [(["cammode"] call zade_spectator_fnc_getRestrictions) select 0] call zade_spectator_fnc_switchCamMode;
+         };
+    };
+    case ("3dmarker"): {
+         if (_params select 0) then {
+             if !(zade_spectator_3dMarker) then {["3D-Markers enabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;};
+         } else {
+             ["3D-Markers are disabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;
+             if (zade_spectator_3dMarker) then {["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;};
+             zade_spectator_3dMarker = false;
+         };
+    };
+};

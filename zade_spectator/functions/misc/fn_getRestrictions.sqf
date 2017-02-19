@@ -1,6 +1,6 @@
 params ["_type","_param"];
 
-private _restrictions = missionNamespace getVariable ["zade_spectatator_spectator",[[east,west,resistance,civilian],["FREECAM","EXTERNAL","INTERNAL"],true]];
+private _restrictions = missionNamespace getVariable ["zade_spectatator_restrictions",[[east,west,resistance,civilian],["FREECAM","EXTERNAL","INTERNAL"],true]];
 
 private _return = _restrictions;
 

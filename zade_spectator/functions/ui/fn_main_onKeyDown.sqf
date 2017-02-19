@@ -181,7 +181,6 @@ switch (true) do {
           };
           true;
      };
-
      case (_key in [50]): { //M - Toggle map
           if (ctrlShown (_dialog displayCtrl IDC_MAP)) then {
                //hide map
@@ -206,12 +205,14 @@ switch (true) do {
           true;
      };
      case (_key in [46]): { //C - Cycle cammode
-          private _camMode = (["EXTERNAL","FREECAM","INTERNAL"] find zade_spectator_camMode);
-          if (_ctrl) then {
-               _camMode = (["INTERNAL","EXTERNAL","FREECAM"] find zade_spectator_camMode);
+
+          private _camMode = if (lbCurSel (_dialog displayCtrl IDC_LEFT_CAMMODE) isEqualTo 2) then {0} else {lbCurSel (_dialog displayCtrl IDC_LEFT_CAMMODE) +1};
+          while {!(["cammode", ["FREECAM","INTERNAL","EXTERNAL"] select _camMode] call zade_spectator_fnc_getRestrictions)} do {
+               _camMode = if (_camMode isEqualTo 2) then {0} else {_camMode +1}; //_camMode++; it doesn't count over 2 but goes back to 0
           };
+
           (_dialog displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel _camMode;
-          [(["FREECAM","INTERNAL","EXTERNAL"] select _camMode)] call zade_spectator_fnc_switchCamMode;
+          [["FREECAM","INTERNAL","EXTERNAL"] select _camMode] call zade_spectator_fnc_switchCamMode;
           true;
      };
      case (_key in [48]): {  //B - Toggle 3D-Marker

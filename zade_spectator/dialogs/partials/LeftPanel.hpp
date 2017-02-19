@@ -95,5 +95,5 @@ class view: side
      h = 12 * GRID_H;
      columns=3;
      strings[]={"a3\3den\Data\Displays\Display3DEN\EntityMenu\movecamera_ca.paa","a3\ui_f\data\GUI\Rsc\RscDisplayEGSpectator\fps.paa","a3\ui_f\data\map\VehicleIcons\iconman_ca.paa"};
-     onToolBoxSelChanged = "[['FREECAM','INTERNAL','EXTERNAL'] select (_this select 1)] call zade_spectator_fnc_switchCamMode;";
+     onToolBoxSelChanged = "_this call zade_spectator_fnc_camMode_onToolboxSelChanged;";
 };
