@@ -100,6 +100,7 @@ switch (tolower _type) do {
               if (zade_spectator_3dMarker) then {
                    ["zade_spectator_3dIcons","onEachFrame"] call BIS_fnc_removeStackedEventHandler;
               };
+              zade_spectator_3dMarker = false;
          };
     };
 };
