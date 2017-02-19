@@ -47,5 +47,5 @@ if !(alive zade_spectator_target) then {
      _side = [_unit] call zade_spectator_fnc_deadside;
 };
 
-(_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([west,east,resistance,civilian] find _side);
+(_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([_side] call BIS_fnc_sideID);
 [] call zade_spectator_fnc_loadUnitsTree;

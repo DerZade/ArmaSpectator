@@ -21,7 +21,7 @@ private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];
 if (isNil "_dialog") exitWith {};
 
 private _tree = _dialog displayCtrl IDC_LEFT_TREE;
-private _side = [west,east,resistance,civilian] select ((lbCurSel (_dialog displayCtrl IDC_LEFT_SIDE)) max 0);
+private _side =  [(lbCurSel (_dialog displayCtrl IDC_LEFT_SIDE)) max 0] call BIS_fnc_sideType;
 
 private _allUnits = +([_side] call zade_spectator_fnc_allUnits);
 private _addedGrps = [];

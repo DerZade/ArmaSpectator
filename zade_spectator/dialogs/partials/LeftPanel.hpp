@@ -15,7 +15,7 @@ class side: zade_spectator_RscToolbox
      w = (LEFTPANEL_W - 2) * GRID_W;
      h = 12 * GRID_H;
      columns=4;
-     strings[]={"a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa"};
+     strings[]={"a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_east_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_west_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_guer_ca.paa","a3\3DEN\Data\Displays\Display3DEN\PanelRight\side_civ_ca.paa"};
      values[]={0,1,2,3};
      onToolBoxSelChanged = "[] call zade_spectator_fnc_loadUnitsTree;";
 };
