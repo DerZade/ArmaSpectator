@@ -23,7 +23,7 @@ private _index = [zade_spectator_deadUnits,_group] call zade_spectator_fnc_findI
 if (_index isEqualTo -1) then {
      zade_spectator_deadUnits pushBack [_group,[_unit]];
 } else {
-     (zade_spectator_deadUnits select _index select 1) pushBack _unit;
+     (zade_spectator_deadUnits select _index select 1) pushBackUnique _unit;
 };
 
 publicVariable "zade_spectator_deadUnits";
