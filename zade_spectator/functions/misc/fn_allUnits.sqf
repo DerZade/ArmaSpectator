@@ -21,7 +21,7 @@ private _units = [];
      //unit has to be in a allowed side
      if (["side",side _x] call zade_spectator_fnc_getRestrictions) then {
           if (alive _x) then { //unit has to be alive
-               if ((_side isEqualTo sideUnknown) or (_side isEqualTo (side _x))) then {_units pushBack _x};
+               if ((_side isEqualTo sideUnknown) or (_side isEqualTo (side (group _x)))) then {_units pushBack _x};
           };
      };
 } forEach zade_spectator_spectateableUnits;
