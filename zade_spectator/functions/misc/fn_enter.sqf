@@ -33,7 +33,6 @@ selectPlayer _spectator;
 [_target] call zade_spectator_fnc_switchTarget;
 [_camMode] call zade_spectator_fnc_switchCamMode;
 
-
 if (TFAR_ENABLED) then {
      //set TFAR into spectator mode
      zade_spectator_TFARSpectator = false;

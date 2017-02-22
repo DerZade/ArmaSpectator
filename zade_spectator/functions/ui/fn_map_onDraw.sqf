@@ -56,7 +56,7 @@ private _dialog = ctrlParent _ctrl;
           };
 
           //color
-          private _color = [(side _x)] call BIS_fnc_sideColor;;
+          private _color = [side (group _x)] call BIS_fnc_sideColor;;
           if (_x isEqualTo _cursorTarget) then {_color = ACTIVECOLOR_SCRIPT};
 
           _ctrl drawIcon [_icon, _color, getPos _x, 24, 24, getDir _x, "", 0, 0.03, 'RobotoCondensed', 'right'];
