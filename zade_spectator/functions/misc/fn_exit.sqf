@@ -13,7 +13,7 @@
  *
  * Public: No
  */
-
+#include "..\..\configure.hpp"
 params [["_unit",(player getVariable "zade_spectator_oldPlayer")]];
 private _spectator = player;
 //reset cam mode
@@ -51,6 +51,6 @@ selectPlayer _unit;
 _unit switchCamera "INTERNAL";
 deleteVehicle _spectator;
 
-if ("task_force_radio" in activatedAddons) then {
+if (TFAR_ENABLED) then {
      [_unit, false] call TFAR_fnc_forceSpectator;
 };

@@ -31,14 +31,14 @@ if (count _cursorTarget > 0) then {_cursorObject = (_cursorTarget select 0) sele
           private _icon = if ([_x] call zade_spectator_fnc_isMedic) then {"iconManMedic"} else {"iconMan"};
           if (leader (group _x) isEqualTo _x) then {_icon = "iconManLeader";};
           if ([_x] call zade_spectator_fnc_isUnconscious) then {_icon = "\a3\ui_f\data\igui\cfg\simpletasks\types\heal_ca.paa";};
-          if (_distance > 300) then {_icon = "P:\a3\ui_f\data\map\markers\military\dot_ca.paa";};
+          if (_distance > 300) then {_icon = "\a3\ui_f\data\map\markers\military\dot_ca.paa";};
           //color
           private _color = [(side _x)] call BIS_fnc_sideColor;
           private _alpha = if (_distance > 1500) then {(2000 - _distance) / 500} else {1};
           _color set [3,_alpha];
           private _position = _x modelToWorldVisual (_x selectionPosition "Head"); _position set [2, (_position select 2) + 0.75];
 
-          drawIcon3D [_icon, _color, _position, 0.75, 0.75, 0, ""];
+          drawIcon3D [_icon, _color, _position, 0.75, 0.75, 180, ""];
 
           //name
           if (_distance < 300) then {

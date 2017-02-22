@@ -14,7 +14,7 @@
  *
  * Public: No
  */
-
+#include "..\..\configure.hpp"
 params [["_target",([] call zade_spectator_fnc_allUnits) select 0],["_camMode",(["cammode"] call zade_spectator_fnc_getRestrictions) select 0]];
 
 //Initialize variables
@@ -33,7 +33,8 @@ selectPlayer _spectator;
 [_target] call zade_spectator_fnc_switchTarget;
 [_camMode] call zade_spectator_fnc_switchCamMode;
 
-if ("task_force_radio" in activatedAddons) then {
+
+if (TFAR_ENABLED) then {
      //set TFAR into spectator mode
      zade_spectator_TFARSpectator = false;
      [] call zade_spectator_fnc_toogleTFAR;

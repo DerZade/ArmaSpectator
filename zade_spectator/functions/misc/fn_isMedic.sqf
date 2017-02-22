@@ -13,7 +13,13 @@
  *
  * Public: No
  */
-
+#include "..\..\configure.hpp"
 params [["_unit", objNull]];
 
-(typeOf _unit in ["B_medic_F","O_medic_F","I_medic_F"])
+private _return = (typeOf _unit) in ["B_medic_F","O_medic_F","I_medic_F"];
+
+if (ACE_ENABLED) then {
+     _return = [_unit] call ace_medical_fnc_isMedic;
+};
+
+_return

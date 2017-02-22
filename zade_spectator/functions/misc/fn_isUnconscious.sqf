@@ -13,7 +13,13 @@
  *
  * Public: No
  */
-
+#include "..\..\configure.hpp"
 params ["_unit"];
 
-((unitPos _unit) isEqualTo "Down")
+private _return = (incapacitatedState _unit) isEqualTo "UNCONSCIOUS";
+
+if (ACE_ENABLED) then {
+     _return = _unit getVariable ["ace_isunconscious", false];
+};
+
+_return
