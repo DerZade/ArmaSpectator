@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+ disableSerialization;
 #include "..\..\idcmacros.hpp"
 params ["_unit"];
 
@@ -41,7 +42,7 @@ private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];
 if (isNil "_dialog") exitWith {};
 
 //update dialog
-private _side = side zade_spectator_target;
+private _side = side (group zade_spectator_target);
 
 if !(alive zade_spectator_target) then {
      _side = [_unit] call zade_spectator_fnc_deadside;

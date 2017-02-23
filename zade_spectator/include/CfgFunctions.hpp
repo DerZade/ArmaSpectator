@@ -26,6 +26,7 @@ class zade_spectator {
 		class switchCamMode {};
 		class switchTarget {};
 		class toggleTFAR {};
+		class respawnTemplate;
 	};
 	class ui
 	{

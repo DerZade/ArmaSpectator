@@ -21,7 +21,7 @@ uiNamespace setVariable ['zade_spectator_main',_dialog];
 
 //update both toolboxes
 (_dialog displayCtrl IDC_LEFT_CAMMODE) lbSetCurSel (["FREECAM","INTERNAL","EXTERNAL"] find zade_spectator_camMode);
-(_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([side zade_spectator_target] call BIS_fnc_sideID);
+(_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([side (group zade_spectator_target)] call BIS_fnc_sideID);
 
 //update units tree
 [] call zade_spectator_fnc_loadUnitsTree;

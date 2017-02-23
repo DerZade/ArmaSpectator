@@ -20,6 +20,7 @@ params [["_target",([] call zade_spectator_fnc_allUnits) select 0],["_camMode",(
 //Initialize variables
 zade_spectator_camera = objNull;
 zade_spectator_visionMode = "NORMAL";
+zade_spectator_camMode = "";
 zade_spectator_3dMarker = true;
 
 //switch player into curator-unit

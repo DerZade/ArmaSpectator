@@ -2,13 +2,16 @@
 
 class CfgRespawnTemplates
 {
-  #include "zade_spectator\include\CfgRespawnTemplates.hpp"
+     #include "zade_spectator\include\CfgRespawnTemplates.hpp"
 };
 class CfgFunctions {
-  #include "zade_spectator\include\CfgFunctions.hpp"
+     #include "zade_spectator\include\CfgFunctions.hpp"
 };
 class RscTitles {
-  #include "zade_spectator\include\RscTitles.hpp"
+     #include "zade_spectator\include\RscTitles.hpp"
 };
 
 enableDebugConsole = 1;
+
+respawnTemplates[] = {"zade_specator"};
+respawn = 2;

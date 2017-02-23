@@ -6,7 +6,7 @@
  * 0: Unit <OBJECT>
  *
  * Return Value:
- * Is Medic ? <BOOL>
+ * Is Unconscious ? <BOOL>
  *
  * Example:
  * [player] call zade_spectator_fnc_isUnconscious;
