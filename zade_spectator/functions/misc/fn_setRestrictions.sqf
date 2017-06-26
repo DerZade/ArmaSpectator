@@ -13,7 +13,7 @@
  *
  * Params for restriction "side":
  *   To (dis-)allow a single side       ["side",[east,false]] call zade_spectator_fnc_setRestrictions;
- *        0: Side <SIDE>                //the restriction in the first place + east ist disallowed
+ *        0: Side <SIDE>                //the restriction in the first place + east is disallowed
  *        1: Allow? <BOOL>
  *   To (dis-)allow multiple side       ["side",[[east,west],true]] call zade_spectator_fnc_setRestrictions;
  *        0: Sides <ARRAY>              //additionally to whatever the restriction was set to in the first place east and west are allowed

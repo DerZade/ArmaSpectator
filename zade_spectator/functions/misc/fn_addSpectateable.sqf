@@ -10,7 +10,7 @@
  * NONE
  *
  * Example:
- * [] call zade_spectator_fnc_addSpectateable;
+ * [player] call zade_spectator_fnc_addSpectateable;
  *
  * Public: No
  */

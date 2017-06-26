@@ -28,14 +28,14 @@ _rows = switch (tolower _type) do {
      case ("general"): {
           [
           ['Switch to Unit',"2x LMB"],
-          [format ["%1*",actionName "CameraInterface"] , "CameraInterface" call _displayname],
+          [format ["%1 *",actionName "CameraInterface"] , "CameraInterface" call _displayname],
           [localize "str_3den_display3den_menubar_search_text",format ['"%1+%2", %3',toString (toArray keyName 29 - [34]),toString (toArray keyName 33 - [34]), keyName 61]],
-          [localize "str_3den_display3den_menubar_options_text",keyName 59],
+          [localize "str_3den_display3den_menubar_optionscontrols_text",keyName 59],
           [localize "str_3den_display3den_menubar_map_text",keyName 50],
           ['Toggle Camera-Mode',keyName 46],
-          [format ["%1*",actionName "CameraVisionMode"], "CameraVisionMode" call _displayname],
+          [format ["%1 *",actionName "CameraVisionMode"], "CameraVisionMode" call _displayname],
           ['Toggle 3D-Markers',keyName 48],
-          [format ["%1*",actionName "CameraTarget"], "CameraTarget" call _displayname],
+          [format ["%1 *",actionName "CameraTarget"], "CameraTarget" call _displayname],
           ['Toggle TFAR',keyName 20]
           ]
      };
@@ -46,14 +46,14 @@ _rows = switch (tolower _type) do {
      };
      case ("camera_freecam"): {
           [
-          [format ["%1*",actionName "CameraMoveForward"], "CameraMoveForward" call _displayname],
-          [format ["%1*",actionName "CameraMoveBackward"], "CameraMoveBackward" call _displayname],
-          [format ["%1*",actionName "CameraMoveLeft"], "CameraMoveLeft" call _displayname],
-          [format ["%1*",actionName "CameraMoveRight"], "CameraMoveRight" call _displayname],
-          [format ["%1*",actionName "CameraMoveUp"], "CameraMoveUp" call _displayname],
-          [format ["%1*",actionName "CameraMoveDown"], "CameraMoveDown" call _displayname],
-          [format ["%1*",actionName "CameraMoveTurbo1"], "CameraMoveTurbo1" call _displayname],
-          [format ["%1*",actionName "CameraMoveTurbo2"], "CameraMoveTurbo2" call _displayname]
+          [format ["%1 *",actionName "CameraMoveForward"], "CameraMoveForward" call _displayname],
+          [format ["%1 *",actionName "CameraMoveBackward"], "CameraMoveBackward" call _displayname],
+          [format ["%1 *",actionName "CameraMoveLeft"], "CameraMoveLeft" call _displayname],
+          [format ["%1 *",actionName "CameraMoveRight"], "CameraMoveRight" call _displayname],
+          [format ["%1 *",actionName "CameraMoveUp"], "CameraMoveUp" call _displayname],
+          [format ["%1 *",actionName "CameraMoveDown"], "CameraMoveDown" call _displayname],
+          [format ["%1 *",actionName "CameraMoveTurbo1"], "CameraMoveTurbo1" call _displayname],
+          [format ["%1 *",actionName "CameraMoveTurbo2"], "CameraMoveTurbo2" call _displayname]
           ]
      };
      case ("camera_external"): {

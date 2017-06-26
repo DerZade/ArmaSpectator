@@ -36,7 +36,7 @@ class content: zade_spectator_RscControlsGroup
 			y = 0;
 			w = CONTROLS_W * GRID_W;
 			h = (CONTROLS_H - 6.05) * GRID_H;
-			colorBackground[] = {0,0,0,0.5};
+			colorBackground[] = {0,0,0,0.7};
 		};
 		class remark: zade_spectator_RscText
 		{

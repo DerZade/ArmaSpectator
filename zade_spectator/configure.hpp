@@ -1,4 +1,4 @@
-#define ACE_ENABLED true
+#define ACE_ENABLED false
 #define TFAR_ENABLED false
 
 #define PLAYER_SPECTATEABLE true
