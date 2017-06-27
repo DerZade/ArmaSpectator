@@ -53,4 +53,9 @@ class zade_spectator {
 		class search_onKeyUp {};
 		class TFAR_onLoad {};
 	};
+	class objectives
+	{
+		file = "zade_spectator\functions\objectives";
+		class objectives_update{};
+	};
 };

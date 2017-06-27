@@ -81,5 +81,14 @@ class zade_spectator_main
 			h = 1 * safezoneH;
 			onMouseMoving = "_this call zade_spectator_fnc_panel_onMouseMoving;";
 		};
+		class Objectives: zade_spectator_RscControlsGroup
+		{
+			idc = IDC_OBJECTIVES;
+			x = safezoneX + (LEFTPANEL_W + 20) * GRID_W;
+			y = safezoneY + 1 * GRID_H;
+			w = safeZoneW - ((LEFTPANEL_W + 20) * GRID_W) * 2;
+			h = 6 * GRID_H;
+			class Controls {};
+		};
 	};
 };

@@ -17,3 +17,8 @@ class zade_spectator_RscText
 	SizeEx = 5 * GRID_H;
 	linespacing = 1;
 };
+
+class zade_spectator_RscTextCenter: zade_spectator_RscText
+{
+	style = 2;
+};

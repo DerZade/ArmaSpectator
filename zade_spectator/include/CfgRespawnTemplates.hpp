@@ -1,4 +1,4 @@
-class zade_specator
+class zade_spectator
 {
      onPlayerKilled = "zade_spectator_fnc_respawnTemplate";
      onPlayerRespawn = "";
