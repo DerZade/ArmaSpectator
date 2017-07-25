@@ -41,11 +41,11 @@ switch (zade_spectator_camMode) do {
 private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];
 if (isNil "_dialog") exitWith {};
 
-//update dialog
+//update dialog s
 private _side = side (group zade_spectator_target);
 
 if !(alive zade_spectator_target) then {
-     _side = [_unit] call zade_spectator_fnc_deadside;
+     _side = [zade_spectator_target] call zade_spectator_fnc_deadside;
 };
 
 (_dialog displayCtrl IDC_LEFT_SIDE) lbSetCurSel ([_side] call BIS_fnc_sideID);

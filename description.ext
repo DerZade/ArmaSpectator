@@ -4,14 +4,16 @@ class CfgRespawnTemplates
 {
      #include "zade_spectator\include\CfgRespawnTemplates.hpp"
 };
-class CfgFunctions {
+class CfgFunctions
+{
      #include "zade_spectator\include\CfgFunctions.hpp"
 };
-class RscTitles {
+class RscTitles
+{
      #include "zade_spectator\include\RscTitles.hpp"
 };
 
 enableDebugConsole = 1;
 
-respawnTemplates[] = {"zade_specator"};
+respawnTemplates[] = {"zade_spectator"};
 respawn = 2;
