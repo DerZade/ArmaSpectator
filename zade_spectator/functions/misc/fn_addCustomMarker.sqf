@@ -15,7 +15,7 @@
  * NONE
  *
  * Example:
- * [] call zade_spectator_fnc_addCustomMarker;
+ * n/a
  *
  * Public: No
  */

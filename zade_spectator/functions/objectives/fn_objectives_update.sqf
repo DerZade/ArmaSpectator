@@ -13,7 +13,7 @@ while {!(_objectivesGrp controlsGroupCtrl -1 isEqualTo controlNull)} do {
     ctrlDelete (_objectivesGrp controlsGroupCtrl -1);
 };
 
-//create new control
+//create new controls
 {
      private _configPath = _x;
      if (call compile getText(_configPath >> "condition")) then {

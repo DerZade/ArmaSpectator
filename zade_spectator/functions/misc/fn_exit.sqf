@@ -3,7 +3,7 @@
  * Exit local spectator
  *
  * Arguments:
- * 0: Unit to switch in (OPTIONAL) If none is given, the unit from which he entered well be used instead
+ * 0: Unit to switch in (OPTIONAL) If none is given, the unit from which he entered will be used instead
  *
  * Return Value:
  * NONE

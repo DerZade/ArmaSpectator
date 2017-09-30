@@ -3,7 +3,7 @@
  * Switches local player into spectator mode. Inializes all variables, the display etc.
  *
  * Arguments:
- * 0: Target <OBJECT>
+ * 0: Target <OBJECT> (OPTIONAL)
  * 1: Camera mode <STRING> either "FREECAM", "INTERNAL" or "EXTERNAL" (OPTIONAL)
  *
  * Return Value:

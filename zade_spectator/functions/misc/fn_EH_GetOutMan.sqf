@@ -1,6 +1,6 @@
 /*
- * Triggers when spectetable gets out of vehicle
  * Author: DerZade
+ * Triggers when spectetable unit gets out of vehicle
  *
  * Arguments:
  * n/a

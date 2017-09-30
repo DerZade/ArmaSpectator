@@ -1,6 +1,6 @@
 /*
- * Triggers when spectetable gets into vehicle
  * Author: DerZade
+ * Triggers when spectetable unit gets into vehicle
  *
  * Arguments:
  * n/a

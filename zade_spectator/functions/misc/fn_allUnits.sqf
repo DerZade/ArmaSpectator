@@ -1,6 +1,6 @@
 /*
- * Return all spectetable units depending on which sides the spectator is allowed to spectate
  * Author: DerZade
+ * Return all spectetable units depending on which sides the spectator is allowed to spectate. The first argument can be used to only retrun units of a specific side.
  *
  * Arguments:
  * 0: Side <SIDE> (Optional)
