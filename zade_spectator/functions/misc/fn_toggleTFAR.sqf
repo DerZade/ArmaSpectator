@@ -14,7 +14,7 @@
  * Public: No
  */
 
-if (isNil "zade_spectator_TFARSpectator") exitWith {};
+if (isNil "zade_spectator_TFARSpectator") exitWith {["TFAR is disabled.",[1,0.55,0,1]] call zade_spectator_fnc_hint;};
 
 private _new = ! zade_spectator_TFARSpectator;
 
