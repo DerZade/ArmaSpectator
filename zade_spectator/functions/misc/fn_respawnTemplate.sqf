@@ -24,3 +24,5 @@ if (zade_spectator_camMode isEqualTo "FREECAM" and !(isNil "_target")) then {
      zade_spectator_camera camSetTarget objNull;
      zade_spectator_camera  camCommit 0;
 };
+
+false;
