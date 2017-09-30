@@ -3,7 +3,6 @@
 // Base classes
 #include "..\defines\RscButton.hpp"
 #include "..\defines\RscCheckbox.hpp"
-#include "..\defines\RscCombo.hpp"
 #include "..\defines\RscControlsGroup.hpp"
 #include "..\defines\RscEdit.hpp"
 #include "..\defines\RscListNBox.hpp"
