@@ -1,3 +1,20 @@
+/*
+ * Author: DerZade
+ * Triggerd by the 'onToolboxSelChanged'-EH of the camMode Toolbox
+ *
+ * Arguments:
+ * 0: Toobox <CONTROL>
+ * 1: Selected Index <NUMBER>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * _this call zade_spectator_fnc_camMode_onToolboxSelChanged;
+ *
+ * Public: No
+ */
+
 params ["_toolbox","_curIndex"];
 
 private _oldIndex = ['FREECAM','INTERNAL','EXTERNAL'] find zade_spectator_cammode;

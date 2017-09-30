@@ -1,4 +1,22 @@
+/*
+ * Author: DerZade
+ * Displays hint for local spectator.
+ *
+ * Arguments:
+ * 0: Text to display <STRING>
+ * 1: Color <COLOR RGBA> (optional | default: [1,1,1,1])
+ *
+ * Return Value:
+ * NONE
+ *
+ * Examples:
+ * ["You suck, because you died looser!!!111",[1,1,0,1]] call zade_spectator_fnc_hint;
+ *
+ * Public: No
+ */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_text",["_color",[1,1,1,1]]];
 
 ("zade_spectator_hint" call BIS_fnc_rscLayer) cutRsc ["zade_spectator_hint","PLAIN"];

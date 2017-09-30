@@ -1,3 +1,22 @@
+/*
+ * Author: DerZade
+ * Triggerd by the 'onMouseButtonDblClick'-EH of the main mousehandler
+ *
+ * Arguments:
+ * 0: Mouse Handler <CONTROL>
+ * 1: Button <NUMBER>
+ * 2: X Coordinate <NUMBER>
+ * 3: Y Coordinate <NUMBER>
+ *
+ * Return Value:
+ * NONE
+ *
+ * Example:
+ * _this call zade_spectator_fnc_main_onMouseButtonDblClick;
+ *
+ * Public: No
+ */
+
 params ["_ctrl","_btn","_x","_y"];
 
 //switch to new unit
