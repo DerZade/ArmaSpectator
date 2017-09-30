@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Switches local player into spectator mode. Inializes all variables, the display etc.
  *
  * Arguments:
@@ -14,7 +14,9 @@
  *
  * Public: No
  */
+
 #include "..\..\configure.hpp"
+
 params [["_target",([] call zade_spectator_fnc_allUnits) select 0],["_camMode",(["cammode"] call zade_spectator_fnc_getRestrictions) select 0]];
 
 //Initialize variables

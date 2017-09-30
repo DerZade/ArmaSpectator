@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Toggle TFAR Spectator mode of local spectator
  *
  * Arguments:

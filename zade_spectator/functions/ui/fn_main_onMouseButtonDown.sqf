@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * onMouseButtonDown-EH
  *
  * Arguments:
@@ -16,6 +16,7 @@
  *
  * Public: No
  */
+ 
 params ["_ctrl","_btn","_x","_y"];
 
 switch (zade_spectator_camMode) do {

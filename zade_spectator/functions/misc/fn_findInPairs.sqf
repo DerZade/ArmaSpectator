@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Find in pairs (BIS_fnc_findInPairs only works with Stings)
  *
  * Arguments:

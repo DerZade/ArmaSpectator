@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Handles all icon drawing on the map
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_ctrl"];
 
 private _mapScale = ctrlMapScale _ctrl;

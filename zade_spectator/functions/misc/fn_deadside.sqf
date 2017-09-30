@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Returns side of dead unit
  *
  * Arguments:

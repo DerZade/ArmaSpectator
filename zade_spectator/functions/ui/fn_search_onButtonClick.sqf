@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggered by the 'search' button in the interface
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_ctrl"];
 
 private _edit = (ctrlParent _ctrl) displayCtrl IDC_LEFT_EDIT;

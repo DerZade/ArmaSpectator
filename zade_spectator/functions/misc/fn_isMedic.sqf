@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Returns whether a unit is a medic
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\configure.hpp"
+
 params [["_unit", objNull]];
 
 private _return = (typeOf _unit) in ["B_medic_F","O_medic_F","I_medic_F"];

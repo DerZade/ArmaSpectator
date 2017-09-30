@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * onLoad of listboxes in the controls.
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_listbox",["_type",""]];
 
 _listbox ctrlEnable false;

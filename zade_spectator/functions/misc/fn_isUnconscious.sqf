@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Returns whether a unit is a unconscious
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\configure.hpp"
+
 params ["_unit"];
 
 private _return = (incapacitatedState _unit) isEqualTo "UNCONSCIOUS";

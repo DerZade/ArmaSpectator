@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Switches target (curently spectated unit) on local spectator
  *
  * Arguments:
@@ -13,8 +13,11 @@
  *
  * Public: No
  */
- disableSerialization;
+
 #include "..\..\idcmacros.hpp"
+
+disableSerialization;
+
 params ["_unit"];
 
 zade_spectator_target = _unit;

@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Main KeyDown-EH of the UI
  *
  * Arguments:
@@ -17,8 +17,11 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 disableSerialization;
+
 params ["_dialog","_key","_shift","_ctrl","_alt"];
 
 //make sure the user isn't typing in the search field

@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * onLoad-EH of the main EH
  *
  * Arguments:
@@ -13,8 +13,11 @@
  *
  * Public: No
  */
+ 
 #include "..\..\idcmacros.hpp"
+
 disableSerialization;
+
 params ["_dialog"];
 
 uiNamespace setVariable ['zade_spectator_main',_dialog];

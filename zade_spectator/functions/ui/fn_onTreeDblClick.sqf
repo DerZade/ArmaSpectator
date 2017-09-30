@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggerd by the 'TreeDblClick'-EH of the units tree
  *
  * Arguments:
@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+ 
 params ["_ctrl","_path"];
 
 if (count _path isEqualTo 1) exitWith {};

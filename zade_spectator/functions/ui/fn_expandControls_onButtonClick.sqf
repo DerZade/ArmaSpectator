@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggered by the 'collapse/expand' button in the controls
  *
  * Arguments:
@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+ 
 #include "..\..\idcmacros.hpp"
 
 #define GROUP_COLLAPSED (5.5 * GRID_H)

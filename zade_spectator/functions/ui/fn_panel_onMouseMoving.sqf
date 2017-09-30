@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggerd by the 'onMouseMoving'-EH of left panel
  *
  * Arguments:
@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+ 
 params ["_ctrl","","","_mouseOver"];
 
 if (_mouseOver and ctrlFade _ctrl isEqualTo 0) exitWith {};

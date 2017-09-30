@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggered by the KeyUp-EH of the search RscEdit
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_ctrl",["_key",-1]];
 
 private _dialog = ctrlParent _ctrl;

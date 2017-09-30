@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggred by a click on the map
  *
  * Arguments:
@@ -14,7 +14,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_ctrl","_btn"];
 
 private _mapScale = ctrlMapScale _ctrl;

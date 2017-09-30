@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * onMouseZChanged-EH
  *
  * Arguments:
@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+ 
 params ["_ctrl","_value"];
 
 if !(zade_spectator_camMode isEqualTo "EXTERNAL") exitWith {};

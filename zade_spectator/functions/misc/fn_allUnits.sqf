@@ -1,6 +1,6 @@
 /*
- * Author: Derzade
  * Return all spectetable units depending on which sides the spectator is allowed to spectate
+ * Author: DerZade
  *
  * Arguments:
  * 0: Side <SIDE> (Optional)
@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+
 params [["_side",sideUnknown]];
 
 private _units = [];

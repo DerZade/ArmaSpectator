@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Add unit as spectateable
  *
  * Arguments:
@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+ 
 params ["_unit",["_add", true]];
 
 

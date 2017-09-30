@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Handles all 3D icon drawing
  *
  * Arguments:

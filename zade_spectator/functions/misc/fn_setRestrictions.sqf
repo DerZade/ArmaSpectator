@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Main KeyUp-EH of the UI
  *
  * Arguments:

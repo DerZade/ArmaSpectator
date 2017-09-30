@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Exit local spectator
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\configure.hpp"
+
 params [["_unit",(player getVariable "zade_spectator_oldPlayer")]];
 private _spectator = player;
 //reset cam mode

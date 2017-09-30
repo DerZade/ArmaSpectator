@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggerd by the 'onLoad'-EH of TFAR display
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 params ["_disp"];
 
 if (isNil "zade_spectator_TFARSpectator") exitWith {

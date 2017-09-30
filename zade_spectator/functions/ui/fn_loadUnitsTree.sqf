@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * This functions updates the units tree
  *
  * Arguments:
@@ -13,7 +13,9 @@
  *
  * Public: No
  */
+
 #include "..\..\idcmacros.hpp"
+
 disableSerialization;
 
 private _dialog = uiNamespace getVariable ["zade_spectator_main",nil];

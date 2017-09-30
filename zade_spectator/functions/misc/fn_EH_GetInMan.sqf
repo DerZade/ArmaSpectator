@@ -1,6 +1,6 @@
 /*
- * Author: Derzade
  * Triggers when spectetable gets into vehicle
+ * Author: DerZade
  *
  * Arguments:
  * n/a
@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+ 
 params ["_unit","_pos","_vehicle","_turret"];
 
 //update the unit tree of all spectators

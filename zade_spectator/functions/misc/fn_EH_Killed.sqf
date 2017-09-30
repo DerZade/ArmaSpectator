@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Triggers when spectetable unit dies
  *
  * Arguments:
@@ -13,6 +13,7 @@
  *
  * Public: No
  */
+ 
 params ["_unit"];
 
 private _group = group _unit;

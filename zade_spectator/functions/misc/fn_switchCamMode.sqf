@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Switches cam mode on local spectator
  *
  * Arguments:
@@ -13,8 +13,11 @@
  *
  * Public: No
  */
-disableSerialization;
+
 #include "..\..\idcmacros.hpp"
+
+disableSerialization;
+
 params [["_camMode",""]];
 
 if !(_camMode in ["INTERNAL","EXTERNAL","FREECAM"]) exitWith {["Invalid cammode: %1",_camMode] call BIS_fnc_error;};

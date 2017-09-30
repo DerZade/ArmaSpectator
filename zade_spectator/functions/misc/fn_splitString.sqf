@@ -1,5 +1,5 @@
 /*
- * Author: Derzade
+ * Author: DerZade
  * Splits given string str into an array of tokens according to given seperator.
  * This functions only exists because BI's functions doesn't support a seperator with multiple chars.
  *
