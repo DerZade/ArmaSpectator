@@ -35,15 +35,17 @@ class string_1
      };
 };
 
-class string_2 :string_1
+class string_2: string_1
 {
+     condition = "missionNameSpace getVariable ['con2',true];"; //condition to show objective
      switchVar = "missionNameSpace getVariable ['swt3',false];"; //expression; when return is true attributes from subclass 'switch' will be used
      text = "B"; //text shown in middle of progress bar
      tooltip = "OBJ BRAVO";
 };
 
-class string_3 :string_1
+class string_3: string_1
 {
+     condition = "missionNameSpace getVariable ['con3',true];"; //condition to show objective
      switchVar = "missionNameSpace getVariable ['swt4',false];"; //expression; when return is true attributes from subclass 'switch' will be used
      text = "C"; //text shown in middle of progress bar
      tooltip = "OBJ CHARLIE";

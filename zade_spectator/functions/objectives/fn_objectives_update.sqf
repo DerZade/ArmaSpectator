@@ -91,10 +91,9 @@ while {!(_objectivesGrp controlsGroupCtrl -1 isEqualTo controlNull)} do {
                     _createdCtrls pushBack _grp;
                };
                case ("text"): {
-                    private _pos = [0, 0, getNumber(_configPath >> "width") * _widthUnit, _height];
-
                     //create control
                     private _text = _disp ctrlCreate ["zade_spectator_RscTextCenter",-1, _objectivesGrp];
+                    private _pos = [0, 0, getNumber(_configPath >> "width") * _widthUnit, _height];
                     _text ctrlSetPosition _pos;
 
                     //apply default properties

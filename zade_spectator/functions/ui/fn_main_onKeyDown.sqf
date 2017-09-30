@@ -239,7 +239,8 @@ switch (true) do {
           };
           true;
      };
+
      default {
-         hintSilent format ["No action for key %1",_key];
+         //hintSilent format ["No action for key %1",_key];
      };
 };
