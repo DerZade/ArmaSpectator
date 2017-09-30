@@ -29,7 +29,7 @@ private _displayname = {if (count (actionKeys _this) > 1) then {([actionKeysName
 _rows = switch (tolower _type) do {
      case ("general"): {
           [
-          ['Switch to Unit',"2x LMB"],
+          ['Switch to Unit under Cursor',"2x LMB"],
           [format ["%1 *",actionName "CameraInterface"] , "CameraInterface" call _displayname],
           [localize "str_3den_display3den_menubar_search_text",format ['"%1+%2", %3',toString (toArray keyName 29 - [34]),toString (toArray keyName 33 - [34]), keyName 61]],
           [localize "str_3den_display3den_menubar_optionscontrols_text",keyName 59],
