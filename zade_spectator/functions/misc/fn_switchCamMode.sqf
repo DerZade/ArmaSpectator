@@ -66,7 +66,7 @@ switch (_camMode) do {
           zade_spectator_camera = _camera;
           zade_spectator_vector = [0,-7,3];
 
-          ["zade_spectator_updateExternalCam","onEachFrame","_vec = if (vehicle zade_spectator_target isEqualTo zade_spectator_target) then {zade_spectator_vector vectorAdd (zade_spectator_target selectionPosition 'head')} else {zade_spectator_vector}; zade_spectator_camera camSetRelPos _vec; zade_spectator_camera camCommit 0;"] call BIS_fnc_addStackedEventHandler;
+          ["zade_spectator_updateExternalCam","onEachFrame",{_vec = if (vehicle zade_spectator_target isEqualTo zade_spectator_target) then {zade_spectator_vector vectorAdd (zade_spectator_target selectionPosition 'head')} else {zade_spectator_vector}; zade_spectator_camera camSetRelPos _vec; zade_spectator_camera camCommit 0;}] call BIS_fnc_addStackedEventHandler;
      };
      case ("FREECAM"): {
           private _camera = "camcurator" camCreate eyePos zade_spectator_target;
