@@ -29,7 +29,7 @@ zade_spectator_3dMarker = true;
 _spectator = (createGroup sideLogic) createUnit ["VirtualCurator_F", Position player, [], 0, "FORM"];
 _spectator setVariable ["zade_spectator_oldPlayer", player, true];
 removeAllAssignedItems _spectator;
-_spectator enableSimulationGlobal false;
+[_spectator, false] remoteExec ["enableSimulationGlobal",2];
 selectPlayer _spectator;
 
 
