@@ -12,7 +12,7 @@ class zade_spectator_hint
 		{
                idc = IDC_HINT_TEXT;
                x = safezoneW / 2 - (MAP_W *GRID_W  /2) + safezoneX;
-          	y = safezoneY + 5.5 * GRID_H;
+          	y = safezoneY + 7 * GRID_H;
           	w = MAP_W * GRID_W;
           	h = 11 * GRID_H;
 			style = 530;
