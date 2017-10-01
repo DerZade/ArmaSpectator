@@ -13,10 +13,12 @@
  *
  * Public: No
  */
- 
+
 params ["_unit"];
 
 private _group = group _unit;
+
+//systemChat ("LOLOLOLOLOL  "+str _unit+ "     " + str _group);
 
 //push unit into variable
 if (isNil "zade_spectator_deadUnits") then {zade_spectator_deadUnits = [];};

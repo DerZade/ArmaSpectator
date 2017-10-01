@@ -9,8 +9,6 @@ if (_killer in ([] call zade_spectator_fnc_allUnits)) then {
 } else {
      [] call zade_spectator_fnc_enter;
 };
-systemChat str _this;
-
 
 if (zade_spectator_camMode isEqualTo "FREECAM" and !(isNil "_target")) then {
      private _pos = [_oldUnit, 5, ([_oldUnit, _killer] call BIS_fnc_relativeDirTo) -180] call BIS_fnc_relPos;
@@ -24,5 +22,3 @@ if (zade_spectator_camMode isEqualTo "FREECAM" and !(isNil "_target")) then {
      zade_spectator_camera camSetTarget objNull;
      zade_spectator_camera  camCommit 0;
 };
-
-false;

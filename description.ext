@@ -16,4 +16,4 @@ class RscTitles
 enableDebugConsole = 1;
 
 respawnTemplates[] = {"zade_spectator"};
-respawn = 2;
+respawn = 3;
